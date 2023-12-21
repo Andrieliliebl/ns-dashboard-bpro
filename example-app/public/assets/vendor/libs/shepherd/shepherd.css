@@ -31,10 +31,8 @@
 .shepherd-footer {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: end;
-      justify-content: flex-end;
+  justify-content: flex-end;
   padding: 0 0.75rem 0.75rem;
 }
 
@@ -68,10 +66,8 @@
 
 .shepherd-title {
   color: rgba(0, 0, 0, 0.75);
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex: 1 0 auto;
-      flex: 1 0 auto;
+  flex: 1 0 auto;
   font-size: 1rem;
   font-weight: 400;
   margin: 0;
@@ -79,14 +75,11 @@
 }
 
 .shepherd-header {
-  -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: end;
-      justify-content: flex-end;
+  justify-content: flex-end;
   line-height: 2em;
   padding: 0.75rem 0.75rem 0;
 }
@@ -155,8 +148,7 @@
 .shepherd-arrow:before {
   background: #fff;
   content: "";
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .shepherd-element[data-popper-placement^=top] > .shepherd-arrow {
@@ -203,8 +195,7 @@
 .shepherd-modal-overlay-container.shepherd-modal-is-visible {
   height: 100vh;
   opacity: 0.5;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
+  transform: translateZ(0);
   transition: all 0.3s ease-out, height 0s 0s, opacity 0.3s 0s;
 }
 

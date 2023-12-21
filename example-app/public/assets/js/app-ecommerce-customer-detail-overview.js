@@ -8,7 +8,7 @@
 $(function () {
   // Variable declaration for table
   var dt_customer_order = $('.datatables-customer-order'),
-    order_details = baseUrl + 'app/ecommerce/order/details',
+    order_details = 'app-ecommerce-order-details.html',
     statusObj = {
       1: { title: 'Ready to  Pickup', class: 'bg-label-info' },
       2: { title: 'Dispatched', class: 'bg-label-warning' },

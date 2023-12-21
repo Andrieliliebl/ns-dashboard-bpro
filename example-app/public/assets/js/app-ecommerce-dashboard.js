@@ -837,7 +837,7 @@
           render: function (data, type, full, meta) {
             var $invoice_id = full['invoice_id'];
             // Creates full output for row
-            var $row_output = '<a href="' + baseUrl + 'app/invoice/preview"><span>#' + $invoice_id + '</span></a>';
+            var $row_output = '<a href="app-invoice-preview.html"><span>#' + $invoice_id + '</span></a>';
             return $row_output;
           }
         },
@@ -890,9 +890,7 @@
             return (
               '<div class="d-flex align-items-center">' +
               '<a href="javascript:;" class="text-body" data-bs-toggle="tooltip" title="Send Mail"><i class="ti ti-mail me-2 ti-sm"></i></a>' +
-              '<a href="' +
-              baseUrl +
-              'app/invoice/preview"class="text-body" data-bs-toggle="tooltip" title="Preview"><i class="ti ti-eye mx-2 ti-sm"></i></a>' +
+              '<a href="app-invoice-preview.html" class="text-body" data-bs-toggle="tooltip" title="Preview"><i class="ti ti-eye mx-2 ti-sm"></i></a>' +
               '<div class="d-inline-block">' +
               '<a href="javascript:;" class="btn btn-sm btn-icon dropdown-toggle hide-arrow" data-bs-toggle="dropdown"><i class="ti ti-dots-vertical ti-sm lh-1"></i></a>' +
               '<div class="dropdown-menu dropdown-menu-end m-0">' +
@@ -935,7 +933,7 @@
           text: '<i class="ti ti-plus me-md-2"></i><span class="d-md-inline-block d-none">Create Invoice</span>',
           className: 'btn btn-primary',
           action: function (e, dt, button, config) {
-            window.location = baseUrl + 'app/invoice/add';
+            window.location = 'app-invoice-add.html';
           }
         }
       ],

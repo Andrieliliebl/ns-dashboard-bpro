@@ -20,8 +20,7 @@
   width: 16.25rem;
   height: 100%;
   z-index: 4;
-  -ms-flex-preferred-size: 16.25rem;
-      flex-basis: 16.25rem;
+  flex-basis: 16.25rem;
   transition: all 0.2s;
 }
 .app-email .app-email-sidebar .btn-compost-wrapper {
@@ -75,10 +74,8 @@
 .app-email .app-email-compose .email-compose-to .select2-selection .select2-selection__choice {
   padding-top: 0.2rem;
   padding-bottom: 0.2rem;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   line-height: 0;
 }
 .app-email .app-email-compose .email-compose-to .select2-selection__choice__remove {
@@ -156,8 +153,7 @@
 }
 .app-email .app-emails-list .email-list li.email-list-item:not(.list-inline-item):hover {
   z-index: 5;
-  -webkit-transform: translateY(-2px);
-          transform: translateY(-2px);
+  transform: translateY(-2px);
 }
 .app-email .app-email-view {
   position: absolute;
@@ -391,8 +387,7 @@
 }
 [dir=rtl] .app-email .app-email-view .app-email-view-header .ti-chevron-right,
 [dir=rtl] .app-email .app-email-view .app-email-view-header .ti-chevron-left {
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 @media (min-width: 1199px) {
   [dir=rtl] .email-list li .email-list-item-meta {

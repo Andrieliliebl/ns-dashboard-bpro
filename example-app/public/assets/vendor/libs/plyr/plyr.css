@@ -1,44 +1,17 @@
 @charset "UTF-8";
-@-webkit-keyframes plyr-progress {
-  to {
-    background-position: var(--plyr-progress-loading-size, 25px) 0;
-  }
-}
 @keyframes plyr-progress {
   to {
     background-position: var(--plyr-progress-loading-size, 25px) 0;
   }
 }
-@-webkit-keyframes plyr-popup {
-  0% {
-    opacity: 0.5;
-    -webkit-transform: translateY(10px);
-            transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
 @keyframes plyr-popup {
   0% {
     opacity: 0.5;
-    -webkit-transform: translateY(10px);
-            transform: translateY(10px);
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-@-webkit-keyframes plyr-fade-in {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
+    transform: translateY(0);
   }
 }
 @keyframes plyr-fade-in {
@@ -52,13 +25,10 @@
 .plyr {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   direction: ltr;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   font-family: var(--plyr-font-family, inherit);
   font-variant-numeric: tabular-nums;
   font-weight: var(--plyr-font-weight-regular, 400);
@@ -99,8 +69,7 @@
 .plyr--full-ui button,
 .plyr--full-ui input,
 .plyr--full-ui label {
-  -ms-touch-action: manipulation;
-      touch-action: manipulation;
+  touch-action: manipulation;
 }
 
 .plyr__badge {
@@ -117,8 +86,7 @@
 }
 
 .plyr__captions {
-  -webkit-animation: plyr-fade-in 0.3s ease;
-          animation: plyr-fade-in 0.3s ease;
+  animation: plyr-fade-in 0.3s ease;
   bottom: 0;
   display: none;
   font-size: var(--plyr-font-size-small, 13px);
@@ -126,9 +94,7 @@
   padding: var(--plyr-control-spacing, 10px);
   position: absolute;
   text-align: center;
-  transition: -webkit-transform 0.4s ease-in-out;
   transition: transform 0.4s ease-in-out;
-  transition: transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
   width: 100%;
 }
 .plyr__captions span:empty {
@@ -151,15 +117,13 @@
 }
 
 .plyr:not(.plyr--hide-controls) .plyr__controls:not(:empty) ~ .plyr__captions {
-  -webkit-transform: translateY(calc(var(--plyr-control-spacing, 10px) * -4));
-          transform: translateY(calc(var(--plyr-control-spacing, 10px) * -4));
+  transform: translateY(calc(var(--plyr-control-spacing, 10px) * -4));
 }
 
 .plyr__caption {
   background: var(--plyr-captions-background, rgba(0, 0, 0, 0.8));
   border-radius: 2px;
-  -webkit-box-decoration-break: clone;
-          box-decoration-break: clone;
+  box-decoration-break: clone;
   color: var(--plyr-captions-text-color, #fff);
   line-height: 185%;
   padding: 0.2em 0.5em;
@@ -175,8 +139,7 @@
   border-radius: var(--plyr-control-radius, 4px);
   color: inherit;
   cursor: pointer;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
+  flex-shrink: 0;
   overflow: visible;
   padding: calc(var(--plyr-control-spacing, 10px) * 0.7);
   position: relative;
@@ -216,17 +179,13 @@ a.plyr__control::after, a.plyr__control::before {
 }
 
 .plyr__controls {
-  -ms-flex-align: center;
-      align-items: center;
-  display: -ms-flexbox;
+  align-items: center;
   display: flex;
-  -ms-flex-pack: end;
-      justify-content: flex-end;
+  justify-content: flex-end;
   text-align: center;
 }
 .plyr__controls .plyr__progress__container {
-  -ms-flex: 1;
-      flex: 1;
+  flex: 1;
   min-width: 0;
 }
 .plyr__controls .plyr__controls__item {
@@ -264,25 +223,20 @@ a.plyr__control::after, a.plyr__control::before {
 }
 
 .plyr__menu {
-  display: -ms-flexbox;
   display: flex;
   position: relative;
 }
 .plyr__menu .plyr__control svg {
-  transition: -webkit-transform 0.3s ease;
   transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 .plyr__menu .plyr__control[aria-expanded=true] svg {
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 .plyr__menu .plyr__control[aria-expanded=true] .plyr__tooltip {
   display: none;
 }
 .plyr__menu__container {
-  -webkit-animation: plyr-popup 0.2s ease;
-          animation: plyr-popup 0.2s ease;
+  animation: plyr-popup 0.2s ease;
   background: var(--plyr-menu-background, rgba(255, 255, 255, 0.9));
   border-radius: var(--plyr-menu-radius, 8px);
   bottom: 100%;
@@ -322,23 +276,16 @@ a.plyr__control::after, a.plyr__control::before {
   margin-top: 0;
 }
 .plyr__menu__container .plyr__control {
-  -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
   color: var(--plyr-menu-color, hsl(216, 15%, 34%));
-  display: -ms-flexbox;
   display: flex;
   font-size: var(--plyr-font-size-menu, var(--plyr-font-size-small, 13px));
   padding: calc(calc(var(--plyr-control-spacing, 10px) * 0.7) / 1.5) calc(calc(var(--plyr-control-spacing, 10px) * 0.7) * 1.5);
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   width: 100%;
 }
 .plyr__menu__container .plyr__control > span {
-  -ms-flex-align: inherit;
-      align-items: inherit;
-  display: -ms-flexbox;
+  align-items: inherit;
   display: flex;
   width: 100%;
 }
@@ -347,8 +294,7 @@ a.plyr__control::after, a.plyr__control::before {
   content: "";
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 .plyr__menu__container .plyr__control--forward {
   padding-right: calc(calc(var(--plyr-control-spacing, 10px) * 0.7) * 4);
@@ -397,8 +343,7 @@ a.plyr__control::after, a.plyr__control::before {
   background: rgba(0, 0, 0, 0.1);
   content: "";
   display: block;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
+  flex-shrink: 0;
   height: 16px;
   margin-right: var(--plyr-control-spacing, 10px);
   transition: all 0.3s ease;
@@ -411,11 +356,8 @@ a.plyr__control::after, a.plyr__control::before {
   left: 12px;
   opacity: 0;
   top: 50%;
-  -webkit-transform: translateY(-50%) scale(0);
-          transform: translateY(-50%) scale(0);
-  transition: opacity 0.3s ease, -webkit-transform 0.3s ease;
+  transform: translateY(-50%) scale(0);
   transition: transform 0.3s ease, opacity 0.3s ease;
-  transition: transform 0.3s ease, opacity 0.3s ease, -webkit-transform 0.3s ease;
   width: 6px;
 }
 .plyr__menu__container .plyr__control[role=menuitemradio][aria-checked=true]::before {
@@ -423,16 +365,13 @@ a.plyr__control::after, a.plyr__control::before {
 }
 .plyr__menu__container .plyr__control[role=menuitemradio][aria-checked=true]::after {
   opacity: 1;
-  -webkit-transform: translateY(-50%) scale(1);
-          transform: translateY(-50%) scale(1);
+  transform: translateY(-50%) scale(1);
 }
 .plyr__menu__container .plyr__control[role=menuitemradio]:focus-visible::before, .plyr__menu__container .plyr__control[role=menuitemradio]:hover::before {
   background: rgba(35, 40, 47, 0.1);
 }
 .plyr__menu__container .plyr__menu__value {
-  -ms-flex-align: center;
-      align-items: center;
-  display: -ms-flexbox;
+  align-items: center;
   display: flex;
   margin-left: auto;
   margin-right: calc((calc(var(--plyr-control-spacing, 10px) * 0.7) - 2px) * -1);
@@ -442,9 +381,7 @@ a.plyr__control::after, a.plyr__control::before {
 }
 
 .plyr--full-ui input[type=range] {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   background: transparent;
   border: 0;
   border-radius: calc(var(--plyr-range-thumb-height, 13px) * 2);
@@ -462,10 +399,8 @@ a.plyr__control::after, a.plyr__control::before {
   border: 0;
   border-radius: calc(var(--plyr-range-track-height, 5px) / 2);
   height: var(--plyr-range-track-height, 5px);
-  -webkit-transition: box-shadow 0.3s ease;
   transition: box-shadow 0.3s ease;
-  -webkit-user-select: none;
-          user-select: none;
+  user-select: none;
   background-image: linear-gradient(to right, currentColor var(--value, 0%), transparent var(--value, 0%));
 }
 .plyr--full-ui input[type=range]::-webkit-slider-thumb {
@@ -475,11 +410,9 @@ a.plyr__control::after, a.plyr__control::before {
   box-shadow: var(--plyr-range-thumb-shadow, 0 1px 1px rgba(35, 40, 47, 0.15), 0 0 0 1px rgba(35, 40, 47, 0.2));
   height: var(--plyr-range-thumb-height, 13px);
   position: relative;
-  -webkit-transition: all 0.2s ease;
   transition: all 0.2s ease;
   width: var(--plyr-range-thumb-height, 13px);
-  -webkit-appearance: none;
-          appearance: none;
+  appearance: none;
   margin-top: calc((var(--plyr-range-thumb-height, 13px) - var(--plyr-range-track-height, 5px)) / 2 * -1);
 }
 .plyr--full-ui input[type=range]::-moz-range-track {
@@ -487,10 +420,8 @@ a.plyr__control::after, a.plyr__control::before {
   border: 0;
   border-radius: calc(var(--plyr-range-track-height, 5px) / 2);
   height: var(--plyr-range-track-height, 5px);
-  -moz-transition: box-shadow 0.3s ease;
   transition: box-shadow 0.3s ease;
-  -moz-user-select: none;
-       user-select: none;
+  user-select: none;
 }
 .plyr--full-ui input[type=range]::-moz-range-thumb {
   background: var(--plyr-range-thumb-background, #fff);
@@ -499,7 +430,6 @@ a.plyr__control::after, a.plyr__control::before {
   box-shadow: var(--plyr-range-thumb-shadow, 0 1px 1px rgba(35, 40, 47, 0.15), 0 0 0 1px rgba(35, 40, 47, 0.2));
   height: var(--plyr-range-thumb-height, 13px);
   position: relative;
-  -moz-transition: all 0.2s ease;
   transition: all 0.2s ease;
   width: var(--plyr-range-thumb-height, 13px);
 }
@@ -513,10 +443,8 @@ a.plyr__control::after, a.plyr__control::before {
   border: 0;
   border-radius: calc(var(--plyr-range-track-height, 5px) / 2);
   height: var(--plyr-range-track-height, 5px);
-  -ms-transition: box-shadow 0.3s ease;
   transition: box-shadow 0.3s ease;
-  -ms-user-select: none;
-      user-select: none;
+  user-select: none;
   color: transparent;
 }
 .plyr--full-ui input[type=range]::-ms-fill-upper {
@@ -524,20 +452,16 @@ a.plyr__control::after, a.plyr__control::before {
   border: 0;
   border-radius: calc(var(--plyr-range-track-height, 5px) / 2);
   height: var(--plyr-range-track-height, 5px);
-  -ms-transition: box-shadow 0.3s ease;
   transition: box-shadow 0.3s ease;
-  -ms-user-select: none;
-      user-select: none;
+  user-select: none;
 }
 .plyr--full-ui input[type=range]::-ms-fill-lower {
   background: transparent;
   border: 0;
   border-radius: calc(var(--plyr-range-track-height, 5px) / 2);
   height: var(--plyr-range-track-height, 5px);
-  -ms-transition: box-shadow 0.3s ease;
   transition: box-shadow 0.3s ease;
-  -ms-user-select: none;
-      user-select: none;
+  user-select: none;
   background: currentColor;
 }
 .plyr--full-ui input[type=range]::-ms-thumb {
@@ -547,7 +471,6 @@ a.plyr__control::after, a.plyr__control::before {
   box-shadow: var(--plyr-range-thumb-shadow, 0 1px 1px rgba(35, 40, 47, 0.15), 0 0 0 1px rgba(35, 40, 47, 0.2));
   height: var(--plyr-range-thumb-height, 13px);
   position: relative;
-  -ms-transition: all 0.2s ease;
   transition: all 0.2s ease;
   width: var(--plyr-range-thumb-height, 13px);
   margin-top: 0;
@@ -627,13 +550,9 @@ a.plyr__control::after, a.plyr__control::before {
   padding: calc(var(--plyr-control-spacing, 10px) / 2) calc(calc(var(--plyr-control-spacing, 10px) / 2) * 1.5);
   pointer-events: none;
   position: absolute;
-  -webkit-transform: translate(-50%, 10px) scale(0.8);
-          transform: translate(-50%, 10px) scale(0.8);
-  -webkit-transform-origin: 50% 100%;
-          transform-origin: 50% 100%;
-  transition: opacity 0.2s 0.1s ease, -webkit-transform 0.2s 0.1s ease;
+  transform: translate(-50%, 10px) scale(0.8);
+  transform-origin: 50% 100%;
   transition: transform 0.2s 0.1s ease, opacity 0.2s 0.1s ease;
-  transition: transform 0.2s 0.1s ease, opacity 0.2s 0.1s ease, -webkit-transform 0.2s 0.1s ease;
   white-space: nowrap;
   z-index: 2;
 }
@@ -646,8 +565,7 @@ a.plyr__control::after, a.plyr__control::before {
   height: 0;
   left: 50%;
   position: absolute;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   width: 0;
   z-index: 2;
 }
@@ -656,8 +574,7 @@ a.plyr__control::after, a.plyr__control::before {
 .plyr .plyr__control:focus-visible .plyr__tooltip,
 .plyr__tooltip--visible {
   opacity: 1;
-  -webkit-transform: translate(-50%, 0) scale(1);
-          transform: translate(-50%, 0) scale(1);
+  transform: translate(-50%, 0) scale(1);
 }
 
 .plyr .plyr__control:hover .plyr__tooltip {
@@ -667,10 +584,8 @@ a.plyr__control::after, a.plyr__control::before {
 .plyr__controls > .plyr__control:first-child .plyr__tooltip,
 .plyr__controls > .plyr__control:first-child + .plyr__control .plyr__tooltip {
   left: 0;
-  -webkit-transform: translate(0, 10px) scale(0.8);
-          transform: translate(0, 10px) scale(0.8);
-  -webkit-transform-origin: 0 100%;
-          transform-origin: 0 100%;
+  transform: translate(0, 10px) scale(0.8);
+  transform-origin: 0 100%;
 }
 .plyr__controls > .plyr__control:first-child .plyr__tooltip::before,
 .plyr__controls > .plyr__control:first-child + .plyr__control .plyr__tooltip::before {
@@ -680,16 +595,13 @@ a.plyr__control::after, a.plyr__control::before {
 .plyr__controls > .plyr__control:last-child .plyr__tooltip {
   left: auto;
   right: 0;
-  -webkit-transform: translate(0, 10px) scale(0.8);
-          transform: translate(0, 10px) scale(0.8);
-  -webkit-transform-origin: 100% 100%;
-          transform-origin: 100% 100%;
+  transform: translate(0, 10px) scale(0.8);
+  transform-origin: 100% 100%;
 }
 .plyr__controls > .plyr__control:last-child .plyr__tooltip::before {
   left: auto;
   right: calc(var(--plyr-control-icon-size, 18px) / 2 + calc(var(--plyr-control-spacing, 10px) * 0.7));
-  -webkit-transform: translateX(50%);
-          transform: translateX(50%);
+  transform: translateX(50%);
 }
 
 .plyr__controls > .plyr__control:first-child:hover .plyr__tooltip, .plyr__controls > .plyr__control:first-child:focus-visible .plyr__tooltip,
@@ -700,8 +612,7 @@ a.plyr__control::after, a.plyr__control::before {
 .plyr__controls > .plyr__control:last-child:hover .plyr__tooltip,
 .plyr__controls > .plyr__control:last-child:focus-visible .plyr__tooltip,
 .plyr__controls > .plyr__control:last-child .plyr__tooltip--visible {
-  -webkit-transform: translate(0, 0) scale(1);
-          transform: translate(0, 0) scale(1);
+  transform: translate(0, 0) scale(1);
 }
 
 .plyr__progress {
@@ -743,25 +654,21 @@ a.plyr__control::after, a.plyr__control::before {
   background: currentColor;
   border-radius: 100px;
   min-width: var(--plyr-range-track-height, 5px);
-  -webkit-transition: width 0.2s ease;
   transition: width 0.2s ease;
 }
 .plyr__progress__buffer::-moz-progress-bar {
   background: currentColor;
   border-radius: 100px;
   min-width: var(--plyr-range-track-height, 5px);
-  -moz-transition: width 0.2s ease;
   transition: width 0.2s ease;
 }
 .plyr__progress__buffer::-ms-fill {
   border-radius: 100px;
-  -ms-transition: width 0.2s ease;
   transition: width 0.2s ease;
 }
 
 .plyr--loading .plyr__progress__buffer {
-  -webkit-animation: plyr-progress 1s linear infinite;
-          animation: plyr-progress 1s linear infinite;
+  animation: plyr-progress 1s linear infinite;
   background-image: linear-gradient(-45deg, var(--plyr-progress-loading-background, rgba(35, 40, 47, 0.6)) 25%, transparent 25%, transparent 50%, var(--plyr-progress-loading-background, rgba(35, 40, 47, 0.6)) 50%, var(--plyr-progress-loading-background, rgba(35, 40, 47, 0.6)) 75%, transparent 75%, transparent);
   background-repeat: repeat-x;
   background-size: var(--plyr-progress-loading-size, 25px) var(--plyr-progress-loading-size, 25px);
@@ -782,16 +689,13 @@ a.plyr__control::after, a.plyr__control::before {
   height: var(--plyr-range-track-height, 5px);
   position: absolute;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   width: var(--plyr-progress-marker-width, 3px);
   z-index: 3;
 }
 
 .plyr__volume {
-  -ms-flex-align: center;
-      align-items: center;
-  display: -ms-flexbox;
+  align-items: center;
   display: flex;
   position: relative;
 }
@@ -886,8 +790,7 @@ a.plyr__control::after, a.plyr__control::before {
 .plyr--full-ui .plyr__video-embed > .plyr__video-embed__container {
   padding-bottom: 240%;
   position: relative;
-  -webkit-transform: translateY(-38.28125%);
-          transform: translateY(-38.28125%);
+  transform: translateY(-38.28125%);
 }
 
 .plyr--video .plyr__controls {
@@ -901,9 +804,7 @@ a.plyr__control::after, a.plyr__control::before {
   padding-top: calc(var(--plyr-control-spacing, 10px) * 2);
   position: absolute;
   right: 0;
-  transition: opacity 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
   transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
-  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out, -webkit-transform 0.4s ease-in-out;
   z-index: 3;
 }
 @media (min-width: 480px) {
@@ -916,8 +817,7 @@ a.plyr__control::after, a.plyr__control::before {
 .plyr--video.plyr--hide-controls .plyr__controls {
   opacity: 0;
   pointer-events: none;
-  -webkit-transform: translateY(100%);
-          transform: translateY(100%);
+  transform: translateY(100%);
 }
 
 .plyr--video .plyr__control:focus-visible, .plyr--video .plyr__control:hover, .plyr--video .plyr__control[aria-expanded=true] {
@@ -936,8 +836,7 @@ a.plyr__control::after, a.plyr__control::before {
   padding: calc(var(--plyr-control-spacing, 10px) * 1.5);
   position: absolute;
   top: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   transition: 0.3s;
   z-index: 2;
 }
@@ -981,30 +880,6 @@ a.plyr__control::after, a.plyr__control::before {
   color: var(--plyr-video-progress-buffered-background, rgba(255, 255, 255, 0.25));
 }
 
-.plyr:-webkit-full-screen {
-  background: #000;
-  border-radius: 0 !important;
-  height: 100%;
-  margin: 0;
-  width: 100%;
-}
-
-.plyr:-moz-full-screen {
-  background: #000;
-  border-radius: 0 !important;
-  height: 100%;
-  margin: 0;
-  width: 100%;
-}
-
-.plyr:-ms-fullscreen {
-  background: #000;
-  border-radius: 0 !important;
-  height: 100%;
-  margin: 0;
-  width: 100%;
-}
-
 .plyr:fullscreen {
   background: #000;
   border-radius: 0 !important;
@@ -1012,64 +887,19 @@ a.plyr__control::after, a.plyr__control::before {
   margin: 0;
   width: 100%;
 }
-.plyr:-webkit-full-screen video {
-  height: 100%;
-}
-.plyr:-moz-full-screen video {
-  height: 100%;
-}
-.plyr:-ms-fullscreen video {
-  height: 100%;
-}
 .plyr:fullscreen video {
   height: 100%;
-}
-.plyr:-webkit-full-screen .plyr__control .icon--exit-fullscreen {
-  display: block;
-}
-.plyr:-moz-full-screen .plyr__control .icon--exit-fullscreen {
-  display: block;
-}
-.plyr:-ms-fullscreen .plyr__control .icon--exit-fullscreen {
-  display: block;
 }
 .plyr:fullscreen .plyr__control .icon--exit-fullscreen {
   display: block;
 }
-.plyr:-webkit-full-screen .plyr__control .icon--exit-fullscreen + svg {
-  display: none;
-}
-.plyr:-moz-full-screen .plyr__control .icon--exit-fullscreen + svg {
-  display: none;
-}
-.plyr:-ms-fullscreen .plyr__control .icon--exit-fullscreen + svg {
-  display: none;
-}
 .plyr:fullscreen .plyr__control .icon--exit-fullscreen + svg {
   display: none;
-}
-.plyr:-webkit-full-screen.plyr--hide-controls {
-  cursor: none;
-}
-.plyr:-moz-full-screen.plyr--hide-controls {
-  cursor: none;
-}
-.plyr:-ms-fullscreen.plyr--hide-controls {
-  cursor: none;
 }
 .plyr:fullscreen.plyr--hide-controls {
   cursor: none;
 }
 @media (min-width: 1024px) {
-  .plyr:-webkit-full-screen .plyr__captions {
-    font-size: var(--plyr-font-size-xlarge, 21px);
-  }
-  .plyr:-moz-full-screen .plyr__captions {
-    font-size: var(--plyr-font-size-xlarge, 21px);
-  }
-  .plyr:-ms-fullscreen .plyr__captions {
-    font-size: var(--plyr-font-size-xlarge, 21px);
-  }
   .plyr:fullscreen .plyr__captions {
     font-size: var(--plyr-font-size-xlarge, 21px);
   }
@@ -1148,8 +978,7 @@ a.plyr__control::after, a.plyr__control::before {
   opacity: 0.8;
   position: absolute;
   top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
+  transform: translateY(-50%);
   width: 3px;
   z-index: 3;
 }
@@ -1164,19 +993,14 @@ a.plyr__control::after, a.plyr__control::before {
   padding: 3px;
   pointer-events: none;
   position: absolute;
-  -webkit-transform: translate(0, 10px) scale(0.8);
-          transform: translate(0, 10px) scale(0.8);
-  -webkit-transform-origin: 50% 100%;
-          transform-origin: 50% 100%;
-  transition: opacity 0.2s 0.1s ease, -webkit-transform 0.2s 0.1s ease;
+  transform: translate(0, 10px) scale(0.8);
+  transform-origin: 50% 100%;
   transition: transform 0.2s 0.1s ease, opacity 0.2s 0.1s ease;
-  transition: transform 0.2s 0.1s ease, opacity 0.2s 0.1s ease, -webkit-transform 0.2s 0.1s ease;
   z-index: 2;
 }
 .plyr__preview-thumb--is-shown {
   opacity: 1;
-  -webkit-transform: translate(0, 0) scale(1);
-          transform: translate(0, 0) scale(1);
+  transform: translate(0, 0) scale(1);
 }
 .plyr__preview-thumb::before {
   border-left: var(--plyr-tooltip-arrow-size, 4px) solid transparent;
@@ -1187,8 +1011,7 @@ a.plyr__control::after, a.plyr__control::before {
   height: 0;
   left: calc(50% + var(--preview-arrow-offset));
   position: absolute;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   width: 0;
   z-index: 2;
 }
@@ -1235,8 +1058,7 @@ a.plyr__control::after, a.plyr__control::before {
 
 .plyr__preview-scrubbing {
   bottom: 0;
-  -webkit-filter: blur(1px);
-          filter: blur(1px);
+  filter: blur(1px);
   height: 100%;
   left: 0;
   margin: auto;
@@ -1258,8 +1080,7 @@ a.plyr__control::after, a.plyr__control::before {
   left: 0;
   max-height: none;
   max-width: none;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
   position: absolute;
   top: 0;
   width: 100%;
@@ -1285,8 +1106,7 @@ a.plyr__control::after, a.plyr__control::before {
 
 .plyr__progress__container,
 .plyr__volume input[type=range] {
-  -ms-flex: 0 1 auto;
-      flex: 0 1 auto;
+  flex: 0 1 auto;
 }
 
 .plyr--audio .plyr__controls {

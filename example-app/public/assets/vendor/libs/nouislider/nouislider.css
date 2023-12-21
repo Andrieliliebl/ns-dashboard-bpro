@@ -12,6 +12,7 @@
   -ms-user-select: none;
   -moz-user-select: none;
   user-select: none;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -47,8 +48,7 @@
   -webkit-transform-origin: 0 0;
   -webkit-transform-style: preserve-3d;
   transform-origin: 0 0;
-  -webkit-transform-style: flat;
-          transform-style: flat;
+  transform-style: flat;
 }
 
 /* Offset direction
@@ -83,9 +83,8 @@
 
 .noUi-state-tap .noUi-connect,
 .noUi-state-tap .noUi-origin {
-  transition: -webkit-transform 0.3s;
+  -webkit-transition: transform 0.3s;
   transition: transform 0.3s;
-  transition: transform 0.3s, -webkit-transform 0.3s;
 }
 
 .noUi-state-drag * {
@@ -208,6 +207,7 @@
  */
 .noUi-pips,
 .noUi-pips * {
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -365,12 +365,8 @@
 
 .noUi-target,
 .noUi-target * {
-  -ms-touch-action: none;
-      touch-action: none;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  touch-action: none;
+  user-select: none;
   box-sizing: border-box;
 }
 
@@ -399,32 +395,25 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-origin {
 }
 
 .noUi-handle {
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
+  backface-visibility: hidden;
   outline: none !important;
   position: absolute;
-  -webkit-transform-origin: center;
-          transform-origin: center;
-  transition: -webkit-transform 0.2s;
+  transform-origin: center;
   transition: transform 0.2s;
-  transition: transform 0.2s, -webkit-transform 0.2s;
 }
 .noUi-handle:before, .noUi-handle:after {
   display: none;
 }
 .noUi-handle.noUi-active {
-  -webkit-transform: scale(1.4, 1.4);
-          transform: scale(1.4, 1.4);
+  transform: scale(1.4, 1.4);
 }
 
 .noUi-horizontal .noUi-handle.noUi-active .noUi-tooltip {
-  -webkit-transform: translate(-50%, 10%) scale(0.8, 0.8);
-          transform: translate(-50%, 10%) scale(0.8, 0.8);
+  transform: translate(-50%, 10%) scale(0.8, 0.8);
 }
 
 .noUi-vertical .noUi-handle.noUi-active .noUi-tooltip {
-  -webkit-transform: translate(10%, -50%) scale(0.8, 0.8);
-          transform: translate(10%, -50%) scale(0.8, 0.8);
+  transform: translate(10%, -50%) scale(0.8, 0.8);
 }
 
 .noUi-touch-area {
@@ -529,12 +518,10 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 .noUi-value-horizontal {
   padding-top: 0.125rem;
-  -webkit-transform: translate(-50%, 50%);
-          transform: translate(-50%, 50%);
+  transform: translate(-50%, 50%);
 }
 [dir=rtl] .noUi-value-horizontal {
-  -webkit-transform: translate(50%, 50%);
-          transform: translate(50%, 50%);
+  transform: translate(50%, 50%);
 }
 
 .noUi-marker-horizontal.noUi-marker {
@@ -559,8 +546,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 
 .noUi-value-vertical {
   padding-left: 0.875rem;
-  -webkit-transform: translate(0, 50%);
-          transform: translate(0, 50%);
+  transform: translate(0, 50%);
 }
 [dir=rtl] .noUi-value-vertical {
   right: 100%;
@@ -584,9 +570,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
   border-radius: 0.25rem;
   text-align: center;
   line-height: 1;
-  transition: -webkit-transform 0.2s;
   transition: transform 0.2s;
-  transition: transform 0.2s, -webkit-transform 0.2s;
   font-size: 0.8125rem;
   border: 0;
 }
@@ -594,15 +578,13 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 .noUi-horizontal .noUi-tooltip {
   bottom: 157%;
   left: 50%;
-  -webkit-transform: translate(-50%, 0);
-          transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
 }
 
 .noUi-vertical .noUi-tooltip {
   top: 50%;
   right: 200%;
-  -webkit-transform: translate(0, -50%);
-          transform: translate(0, -50%);
+  transform: translate(0, -50%);
 }
 [dir=rtl] .noUi-vertical .noUi-tooltip {
   right: auto;
@@ -610,8 +592,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 }
 
 [dir=rtl] .noUi-vertical .noUi-handle.noUi-active .noUi-tooltip {
-  -webkit-transform: translate(-10%, -50%) scale(0.8, 0.8);
-          transform: translate(-10%, -50%) scale(0.8, 0.8);
+  transform: translate(-10%, -50%) scale(0.8, 0.8);
 }
 
 .light-style .noUi-target {

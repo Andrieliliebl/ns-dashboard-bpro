@@ -26,8 +26,7 @@
 .ql-editor {
   overflow-y: auto;
   height: 100%;
-  -o-tab-size: 4;
-     tab-size: 4;
+  tab-size: 4;
   -moz-tab-size: 4;
   box-sizing: border-box;
   display: block;
@@ -152,14 +151,12 @@
 }
 .ql-snow .ql-tooltip,
 .ql-bubble .ql-tooltip {
-  -webkit-transform: translateY(0.625rem);
-          transform: translateY(0.625rem);
+  transform: translateY(0.625rem);
   position: absolute;
 }
 .ql-snow .ql-tooltip.ql-flip,
 .ql-bubble .ql-tooltip.ql-flip {
-  -webkit-transform: translateY(-0.625rem);
-          transform: translateY(-0.625rem);
+  transform: translateY(-0.625rem);
 }
 .ql-snow .ql-tooltip a,
 .ql-bubble .ql-tooltip a {
@@ -418,8 +415,7 @@
 [dir=rtl] .ql-bubble .ql-link svg,
 [dir=rtl] .ql-bubble .ql-image svg,
 [dir=rtl] .ql-bubble .ql-clean svg {
-  -webkit-transform: scaleX(-1);
-          transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 .ql-snow.ql-toolbar,
@@ -465,7 +461,6 @@
   border-color: #000;
 }
 .ql-snow .ql-tooltip {
-  display: -ms-flexbox;
   display: flex;
   padding: 0.3125rem 0.75rem;
   background-color: #fff;
@@ -767,8 +762,7 @@
   visibility: hidden;
   left: 0;
   transition: visibility 0s ease 200ms;
-  -webkit-transform: translate(-50%, -100%);
-          transform: translate(-50%, -100%);
+  transform: translate(-50%, -100%);
 }
 .ql-bubble.ql-container:not(.ql-disabled) a:hover::before, .ql-bubble.ql-container:not(.ql-disabled) a:hover::after {
   visibility: visible;

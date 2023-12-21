@@ -164,19 +164,55 @@ if (document.getElementById('layout-menu')) {
   // Run switchImage function based on the stored style
   switchImage(storedStyle);
 
+  // Internationalization (Language Dropdown)
+  // ---------------------------------------
+
+  if (typeof i18next !== 'undefined' && typeof i18NextHttpBackend !== 'undefined') {
+    i18next
+      .use(i18NextHttpBackend)
+      .init({
+        lng: window.templateCustomizer ? window.templateCustomizer.settings.lang : 'en',
+        debug: false,
+        fallbackLng: 'en',
+        backend: {
+          loadPath: assetsPath + 'json/locales/{{lng}}.json'
+        },
+        returnObjects: true
+      })
+      .then(function (t) {
+        localize();
+      });
+  }
+
   let languageDropdown = document.getElementsByClassName('dropdown-language');
 
   if (languageDropdown.length) {
     let dropdownItems = languageDropdown[0].querySelectorAll('.dropdown-item');
-    const dropdownActiveItem = languageDropdown[0].querySelector('.dropdown-item.active');
-
-    directionChange(dropdownActiveItem.dataset.textDirection);
 
     for (let i = 0; i < dropdownItems.length; i++) {
       dropdownItems[i].addEventListener('click', function () {
+        let currentLanguage = this.getAttribute('data-language');
         let textDirection = this.getAttribute('data-text-direction');
-        window.templateCustomizer.setLang(this.getAttribute('data-language'));
-        directionChange(textDirection);
+
+        for (let sibling of this.parentNode.children) {
+          var siblingEle = sibling.parentElement.parentNode.firstChild;
+
+          // Loop through each sibling and push to the array
+          while (siblingEle) {
+            if (siblingEle.nodeType === 1 && siblingEle !== siblingEle.parentElement) {
+              siblingEle.querySelector('.dropdown-item').classList.remove('active');
+            }
+            siblingEle = siblingEle.nextSibling;
+          }
+        }
+        this.classList.add('active');
+
+        i18next.changeLanguage(currentLanguage, (err, t) => {
+          window.templateCustomizer ? window.templateCustomizer.setLang(currentLanguage) : '';
+          directionChange(textDirection);
+          if (err) return console.log('something went wrong loading', err);
+          localize();
+        });
       });
     }
     function directionChange(textDirection) {
@@ -190,16 +226,19 @@ if (document.getElementById('layout-menu')) {
     }
   }
 
-  // add on click javascript for template customizer reset button id template-customizer-reset-btn
+  function localize() {
+    let i18nList = document.querySelectorAll('[data-i18n]');
+    // Set the current language in dd
+    let currentLanguageEle = document.querySelector('.dropdown-item[data-language="' + i18next.language + '"]');
 
-  setTimeout(function () {
-    let templateCustomizerResetBtn = document.querySelector('.template-customizer-reset-btn');
-    if (templateCustomizerResetBtn) {
-      templateCustomizerResetBtn.onclick = function () {
-        window.location.href = baseUrl + 'lang/en';
-      };
+    if (currentLanguageEle) {
+      currentLanguageEle.click();
     }
-  }, 1500);
+
+    i18nList.forEach(function (item) {
+      item.innerHTML = i18next.t(item.dataset.i18n);
+    });
+  }
 
   // Notification
   // ------------
@@ -467,7 +506,6 @@ if (typeof $ !== 'undefined') {
                 suggestion: function ({ url, icon, name }) {
                   return (
                     '<a href="' +
-                    baseUrl +
                     url +
                     '">' +
                     '<div>' +
@@ -538,9 +576,7 @@ if (typeof $ !== 'undefined') {
                 header: '<h6 class="suggestions-header text-primary mb-0 mx-3 mt-3 pb-2">Members</h6>',
                 suggestion: function ({ name, src, subtitle }) {
                   return (
-                    '<a href="' +
-                    baseUrl +
-                    'app/user/view/account">' +
+                    '<a href="app-user-view-account.html">' +
                     '<div class="d-flex align-items-center">' +
                     '<img class="rounded-circle me-3" src="' +
                     assetsPath +
@@ -576,8 +612,8 @@ if (typeof $ !== 'undefined') {
           // On typeahead select
           .bind('typeahead:select', function (ev, suggestion) {
             // Open selected page
-            if (suggestion.url !== 'javascript:;') {
-              window.location = baseUrl + suggestion.url;
+            if (suggestion.url) {
+              window.location = suggestion.url;
             }
           })
           // On typeahead close

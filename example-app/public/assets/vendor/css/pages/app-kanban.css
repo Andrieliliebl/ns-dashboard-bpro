@@ -10,10 +10,7 @@
   }
 }
 .app-kanban .kanban-wrapper .kanban-container {
-  display: -ms-flexbox;
   display: flex;
-  width: -webkit-max-content !important;
-  width: -moz-max-content !important;
   width: max-content !important;
 }
 .app-kanban .kanban-wrapper .kanban-container .kanban-board {
@@ -25,12 +22,9 @@
   outline: 0;
 }
 .app-kanban .kanban-wrapper .kanban-container .kanban-board .kanban-board-header {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: justify;
-      justify-content: space-between;
-  -ms-flex-align: center;
-      align-items: center;
+  justify-content: space-between;
+  align-items: center;
 }
 .app-kanban .kanban-wrapper .kanban-container .kanban-board .kanban-board-header .kanban-title-board {
   font-size: 1.125rem;
@@ -66,10 +60,8 @@
 }
 .app-kanban .kanban-wrapper .kanban-container .kanban-board .kanban-item {
   position: relative;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
+  flex-direction: column;
   width: 16.25rem;
   padding: 1rem 1rem;
   margin-bottom: 1rem;

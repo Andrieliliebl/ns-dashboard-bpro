@@ -749,14 +749,6 @@ button.list-group-item-primary.active {
   border-color: rgba(255, 255, 255, 0.15);
 }
 
-.form-floating > .form-control:not(:-moz-placeholder-shown) ~ label {
-  color: #e30b5c;
-}
-
-.form-floating > .form-control:not(:-ms-input-placeholder) ~ label {
-  color: #e30b5c;
-}
-
 .form-floating > .form-control:focus ~ label,
 .form-floating > .form-control:not(:placeholder-shown) ~ label,
 .form-floating > .form-select ~ label {
@@ -1324,13 +1316,11 @@ li.ui-timepicker-selected,
 
 .layout-navbar {
   box-shadow: 0 1px 0 #dbdade;
-  -webkit-backdrop-filter: saturate(200%) blur(6px);
-          backdrop-filter: saturate(200%) blur(6px);
+  backdrop-filter: saturate(200%) blur(6px);
 }
 
 .menu-horizontal {
-  -webkit-backdrop-filter: saturate(200%) blur(6px);
-          backdrop-filter: saturate(200%) blur(6px);
+  backdrop-filter: saturate(200%) blur(6px);
 }
 
 .navbar-detached {
@@ -1338,8 +1328,7 @@ li.ui-timepicker-selected,
 }
 
 .layout-navbar-fixed .layout-page:before {
-  -webkit-backdrop-filter: saturate(200%) blur(10px);
-          backdrop-filter: saturate(200%) blur(10px);
+  backdrop-filter: saturate(200%) blur(10px);
   background: linear-gradient(180deg, rgba(245, 245, 245, 0.7) 44%, rgba(245, 245, 245, 0.43) 73%, rgba(245, 245, 245, 0));
   -webkit-mask: linear-gradient(#f5f5f5, #f5f5f5 18%, transparent 100%);
   mask: linear-gradient(#f5f5f5, #f5f5f5 18%, transparent 100%);

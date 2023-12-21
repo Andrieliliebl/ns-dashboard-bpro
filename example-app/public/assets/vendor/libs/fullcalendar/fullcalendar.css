@@ -1,6 +1,5 @@
 .fc .fc-toolbar {
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 .fc .fc-toolbar .fc-prev-button,
 .fc .fc-toolbar .fc-next-button {
@@ -32,21 +31,16 @@
   margin-right: 0 !important;
 }
 .fc .fc-toolbar .fc-toolbar-chunk {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: center;
-      align-items: center;
+  align-items: center;
 }
 .fc .fc-toolbar .fc-button-group .fc-button {
   text-transform: capitalize;
 }
 .fc .fc-toolbar .fc-button-group + div {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-align: center;
-      align-items: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  align-items: center;
+  flex-wrap: wrap;
 }
 .fc .fc-toolbar .fc--button:empty,
 .fc .fc-toolbar .fc-toolbar-chunk:empty {
@@ -94,8 +88,7 @@ html:not([dir=rtl]) .fc .fc-view-harness .fc-scrollgrid-section-header > * {
   margin: 0 -1.5rem;
 }
 .fc .fc-view-harness .fc-daygrid-body .fc-daygrid-day .fc-daygrid-day-top {
-  -ms-flex-direction: row;
-      flex-direction: row;
+  flex-direction: row;
 }
 .fc .fc-view-harness .fc-daygrid-body .fc-daygrid-day .fc-daygrid-day-top .fc-daygrid-day-number {
   float: left;

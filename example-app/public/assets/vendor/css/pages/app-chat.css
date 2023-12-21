@@ -30,8 +30,7 @@
   left: calc(-21rem - 1rem);
   height: calc(100vh - 11.5rem);
   width: 21rem;
-  -ms-flex-preferred-size: 21rem;
-      flex-basis: 21rem;
+  flex-basis: 21rem;
   transition: all 0.25s ease;
 }
 .layout-navbar-hidden .app-chat .app-chat-contacts {
@@ -69,10 +68,8 @@
   }
 }
 .app-chat .app-chat-contacts .sidebar-body .chat-contact-list li.chat-contact-list-item {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: justify;
-      justify-content: space-between;
+  justify-content: space-between;
   padding: 0.5rem 0.75rem;
   margin: 0.25rem 0.75rem;
   border-radius: 0.375rem;
@@ -160,10 +157,8 @@
   }
 }
 .app-chat .app-chat-history .chat-history-body .chat-history .chat-message {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: start;
-      justify-content: flex-start;
+  justify-content: flex-start;
 }
 .app-chat .app-chat-history .chat-history-body .chat-history .chat-message .chat-message-text {
   border-radius: 0.375rem;
@@ -173,8 +168,7 @@
   border-top-left-radius: 0;
 }
 .app-chat .app-chat-history .chat-history-body .chat-history .chat-message.chat-message-right {
-  -ms-flex-pack: end;
-      justify-content: flex-end;
+  justify-content: flex-end;
 }
 .app-chat .app-chat-history .chat-history-body .chat-history .chat-message.chat-message-right .chat-message-text {
   border-top-right-radius: 0;
@@ -267,8 +261,7 @@
   box-shadow: 0 0.125rem 0.25rem rgba(165, 163, 174, 0.3);
 }
 .light-style .app-chat .app-chat-history .chat-history-body .chat-history .chat-message.chat-message-right {
-  -ms-flex-pack: end;
-      justify-content: flex-end;
+  justify-content: flex-end;
 }
 .light-style .app-chat .app-chat-history .chat-history-body .chat-history .chat-message.chat-message-right .chat-message-text {
   color: #fff;
@@ -314,8 +307,7 @@
   box-shadow: 0 0.125rem 0.25rem rgba(15, 20, 34, 0.4);
 }
 .dark-style .app-chat .app-chat-history .chat-history-body .chat-history .chat-message.chat-message-right {
-  -ms-flex-pack: end;
-      justify-content: flex-end;
+  justify-content: flex-end;
 }
 .dark-style .app-chat .app-chat-history .chat-history-body .chat-history .chat-message.chat-message-right .chat-message-text {
   color: #fff;

@@ -43,18 +43,15 @@ html:not([dir=rtl]) .datepicker table thead tr th.prev {
   width: 0.45rem;
   border-radius: 0;
   border-style: solid;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
-  -webkit-transform-origin: left;
-          transform-origin: left;
+  transform: rotate(-45deg);
+  transform-origin: left;
 }
 .datepicker .next::after {
   margin-left: -0.1575rem;
   border-width: 0 1px 1px 0;
 }
 [dir=rtl] .datepicker .next::after {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  transform: rotate(-45deg);
   border-width: 1px 0 0 1px;
   margin-left: 0;
 }
@@ -62,8 +59,7 @@ html:not([dir=rtl]) .datepicker table thead tr th.prev {
   border-width: 1px 0 0 1px;
 }
 [dir=rtl] .datepicker .prev::after {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  transform: rotate(-45deg);
   border-width: 0 1px 1px 0;
   margin-left: -0.225rem;
 }
@@ -140,10 +136,7 @@ html:not([dir=rtl]) .datepicker .datepicker-centuries .datepicker-switch {
 }
 
 .datepicker table {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   margin: 0;
   overflow: hidden;
   border-radius: var(--bs-border-radius);

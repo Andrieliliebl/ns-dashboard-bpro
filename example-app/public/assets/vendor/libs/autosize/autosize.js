@@ -1,3 +1,11 @@
+/*
+ * ATTENTION: The "eval" devtool has been used (maybe by default in mode: "development").
+ * This devtool is neither made for production nor for readable output files.
+ * It uses "eval()" calls to create a separate source file in the browser devtools.
+ * If you are trying to read the output file, select a different devtool (https://webpack.js.org/configuration/devtool/)
+ * or disable the default devtool with "devtool: false".
+ * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
+ */
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
 		module.exports = factory();
@@ -17,237 +25,18 @@ return /******/ (function() { // webpackBootstrap
   \************************************************/
 /***/ (function(module) {
 
-(function (global, factory) {
-	 true ? module.exports = factory() :
-	0;
-}(this, (function () {
-	var assignedElements = new Map();
+eval("(function (global, factory) {\n\t true ? module.exports = factory() :\n\t0;\n}(this, (function () {\n\tvar assignedElements = new Map();\n\n\tfunction assign(ta) {\n\t  if (!ta || !ta.nodeName || ta.nodeName !== 'TEXTAREA' || assignedElements.has(ta)) return;\n\t  var previousHeight = null;\n\n\t  function cacheScrollTops(el) {\n\t    var arr = [];\n\n\t    while (el && el.parentNode && el.parentNode instanceof Element) {\n\t      if (el.parentNode.scrollTop) {\n\t        arr.push([el.parentNode, el.parentNode.scrollTop]);\n\t      }\n\n\t      el = el.parentNode;\n\t    }\n\n\t    return function () {\n\t      return arr.forEach(function (_ref) {\n\t        var node = _ref[0],\n\t            scrollTop = _ref[1];\n\t        node.style.scrollBehavior = 'auto';\n\t        node.scrollTop = scrollTop;\n\t        node.style.scrollBehavior = null;\n\t      });\n\t    };\n\t  }\n\n\t  var computed = window.getComputedStyle(ta);\n\n\t  function setHeight(_ref2) {\n\t    var _ref2$restoreTextAlig = _ref2.restoreTextAlign,\n\t        restoreTextAlign = _ref2$restoreTextAlig === void 0 ? null : _ref2$restoreTextAlig,\n\t        _ref2$testForHeightRe = _ref2.testForHeightReduction,\n\t        testForHeightReduction = _ref2$testForHeightRe === void 0 ? true : _ref2$testForHeightRe;\n\t    var initialOverflowY = computed.overflowY;\n\n\t    if (ta.scrollHeight === 0) {\n\t      // If the scrollHeight is 0, then the element probably has display:none or is detached from the DOM.\n\t      return;\n\t    } // disallow vertical resizing\n\n\n\t    if (computed.resize === 'vertical') {\n\t      ta.style.resize = 'none';\n\t    } else if (computed.resize === 'both') {\n\t      ta.style.resize = 'horizontal';\n\t    }\n\n\t    var restoreScrollTops; // remove inline height style to accurately measure situations where the textarea should shrink\n\t    // however, skip this step if the new value appends to the previous value, as textarea height should only have grown\n\n\t    if (testForHeightReduction) {\n\t      // ensure the scrollTop values of parent elements are not modified as a consequence of shrinking the textarea height\n\t      restoreScrollTops = cacheScrollTops(ta);\n\t      ta.style.height = '';\n\t    }\n\n\t    var newHeight;\n\n\t    if (computed.boxSizing === 'content-box') {\n\t      newHeight = ta.scrollHeight - (parseFloat(computed.paddingTop) + parseFloat(computed.paddingBottom));\n\t    } else {\n\t      newHeight = ta.scrollHeight + parseFloat(computed.borderTopWidth) + parseFloat(computed.borderBottomWidth);\n\t    }\n\n\t    if (computed.maxHeight !== 'none' && newHeight > parseFloat(computed.maxHeight)) {\n\t      if (computed.overflowY === 'hidden') {\n\t        ta.style.overflow = 'scroll';\n\t      }\n\n\t      newHeight = parseFloat(computed.maxHeight);\n\t    } else if (computed.overflowY !== 'hidden') {\n\t      ta.style.overflow = 'hidden';\n\t    }\n\n\t    ta.style.height = newHeight + 'px';\n\n\t    if (restoreTextAlign) {\n\t      ta.style.textAlign = restoreTextAlign;\n\t    }\n\n\t    if (restoreScrollTops) {\n\t      restoreScrollTops();\n\t    }\n\n\t    if (previousHeight !== newHeight) {\n\t      ta.dispatchEvent(new Event('autosize:resized', {\n\t        bubbles: true\n\t      }));\n\t      previousHeight = newHeight;\n\t    }\n\n\t    if (initialOverflowY !== computed.overflow && !restoreTextAlign) {\n\t      var textAlign = computed.textAlign;\n\n\t      if (computed.overflow === 'hidden') {\n\t        // Webkit fails to reflow text after overflow is hidden,\n\t        // even if hiding overflow would allow text to fit more compactly.\n\t        // The following is intended to force the necessary text reflow.\n\t        ta.style.textAlign = textAlign === 'start' ? 'end' : 'start';\n\t      }\n\n\t      setHeight({\n\t        restoreTextAlign: textAlign,\n\t        testForHeightReduction: true\n\t      });\n\t    }\n\t  }\n\n\t  function fullSetHeight() {\n\t    setHeight({\n\t      testForHeightReduction: true,\n\t      restoreTextAlign: null\n\t    });\n\t  }\n\n\t  var handleInput = function () {\n\t    var previousValue = ta.value;\n\t    return function () {\n\t      setHeight({\n\t        // if previousValue is '', check for height shrinkage because the placeholder may be taking up space instead\n\t        // if new value is merely appending to previous value, skip checking for height deduction\n\t        testForHeightReduction: previousValue === '' || !ta.value.startsWith(previousValue),\n\t        restoreTextAlign: null\n\t      });\n\t      previousValue = ta.value;\n\t    };\n\t  }();\n\n\t  var destroy = function (style) {\n\t    ta.removeEventListener('autosize:destroy', destroy);\n\t    ta.removeEventListener('autosize:update', fullSetHeight);\n\t    ta.removeEventListener('input', handleInput);\n\t    window.removeEventListener('resize', fullSetHeight); // future todo: consider replacing with ResizeObserver\n\n\t    Object.keys(style).forEach(function (key) {\n\t      return ta.style[key] = style[key];\n\t    });\n\t    assignedElements[\"delete\"](ta);\n\t  }.bind(ta, {\n\t    height: ta.style.height,\n\t    resize: ta.style.resize,\n\t    textAlign: ta.style.textAlign,\n\t    overflowY: ta.style.overflowY,\n\t    overflowX: ta.style.overflowX,\n\t    wordWrap: ta.style.wordWrap\n\t  });\n\n\t  ta.addEventListener('autosize:destroy', destroy);\n\t  ta.addEventListener('autosize:update', fullSetHeight);\n\t  ta.addEventListener('input', handleInput);\n\t  window.addEventListener('resize', fullSetHeight); // future todo: consider replacing with ResizeObserver\n\n\t  ta.style.overflowX = 'hidden';\n\t  ta.style.wordWrap = 'break-word';\n\t  assignedElements.set(ta, {\n\t    destroy: destroy,\n\t    update: fullSetHeight\n\t  });\n\t  fullSetHeight();\n\t}\n\n\tfunction destroy(ta) {\n\t  var methods = assignedElements.get(ta);\n\n\t  if (methods) {\n\t    methods.destroy();\n\t  }\n\t}\n\n\tfunction update(ta) {\n\t  var methods = assignedElements.get(ta);\n\n\t  if (methods) {\n\t    methods.update();\n\t  }\n\t}\n\n\tvar autosize = null; // Do nothing in Node.js environment\n\n\tif (typeof window === 'undefined') {\n\t  autosize = function autosize(el) {\n\t    return el;\n\t  };\n\n\t  autosize.destroy = function (el) {\n\t    return el;\n\t  };\n\n\t  autosize.update = function (el) {\n\t    return el;\n\t  };\n\t} else {\n\t  autosize = function autosize(el, options) {\n\t    if (el) {\n\t      Array.prototype.forEach.call(el.length ? el : [el], function (x) {\n\t        return assign(x);\n\t      });\n\t    }\n\n\t    return el;\n\t  };\n\n\t  autosize.destroy = function (el) {\n\t    if (el) {\n\t      Array.prototype.forEach.call(el.length ? el : [el], destroy);\n\t    }\n\n\t    return el;\n\t  };\n\n\t  autosize.update = function (el) {\n\t    if (el) {\n\t      Array.prototype.forEach.call(el.length ? el : [el], update);\n\t    }\n\n\t    return el;\n\t  };\n\t}\n\n\tvar autosize$1 = autosize;\n\n\treturn autosize$1;\n\n})));\n\n\n//# sourceURL=webpack://Vuexy/./node_modules/autosize/dist/autosize.js?");
 
-	function assign(ta) {
-	  if (!ta || !ta.nodeName || ta.nodeName !== 'TEXTAREA' || assignedElements.has(ta)) return;
-	  var previousHeight = null;
+/***/ }),
 
-	  function cacheScrollTops(el) {
-	    var arr = [];
+/***/ "./libs/autosize/autosize.js":
+/*!***********************************!*\
+  !*** ./libs/autosize/autosize.js ***!
+  \***********************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-	    while (el && el.parentNode && el.parentNode instanceof Element) {
-	      if (el.parentNode.scrollTop) {
-	        arr.push([el.parentNode, el.parentNode.scrollTop]);
-	      }
-
-	      el = el.parentNode;
-	    }
-
-	    return function () {
-	      return arr.forEach(function (_ref) {
-	        var node = _ref[0],
-	            scrollTop = _ref[1];
-	        node.style.scrollBehavior = 'auto';
-	        node.scrollTop = scrollTop;
-	        node.style.scrollBehavior = null;
-	      });
-	    };
-	  }
-
-	  var computed = window.getComputedStyle(ta);
-
-	  function setHeight(_ref2) {
-	    var _ref2$restoreTextAlig = _ref2.restoreTextAlign,
-	        restoreTextAlign = _ref2$restoreTextAlig === void 0 ? null : _ref2$restoreTextAlig,
-	        _ref2$testForHeightRe = _ref2.testForHeightReduction,
-	        testForHeightReduction = _ref2$testForHeightRe === void 0 ? true : _ref2$testForHeightRe;
-	    var initialOverflowY = computed.overflowY;
-
-	    if (ta.scrollHeight === 0) {
-	      // If the scrollHeight is 0, then the element probably has display:none or is detached from the DOM.
-	      return;
-	    } // disallow vertical resizing
-
-
-	    if (computed.resize === 'vertical') {
-	      ta.style.resize = 'none';
-	    } else if (computed.resize === 'both') {
-	      ta.style.resize = 'horizontal';
-	    }
-
-	    var restoreScrollTops; // remove inline height style to accurately measure situations where the textarea should shrink
-	    // however, skip this step if the new value appends to the previous value, as textarea height should only have grown
-
-	    if (testForHeightReduction) {
-	      // ensure the scrollTop values of parent elements are not modified as a consequence of shrinking the textarea height
-	      restoreScrollTops = cacheScrollTops(ta);
-	      ta.style.height = '';
-	    }
-
-	    var newHeight;
-
-	    if (computed.boxSizing === 'content-box') {
-	      newHeight = ta.scrollHeight - (parseFloat(computed.paddingTop) + parseFloat(computed.paddingBottom));
-	    } else {
-	      newHeight = ta.scrollHeight + parseFloat(computed.borderTopWidth) + parseFloat(computed.borderBottomWidth);
-	    }
-
-	    if (computed.maxHeight !== 'none' && newHeight > parseFloat(computed.maxHeight)) {
-	      if (computed.overflowY === 'hidden') {
-	        ta.style.overflow = 'scroll';
-	      }
-
-	      newHeight = parseFloat(computed.maxHeight);
-	    } else if (computed.overflowY !== 'hidden') {
-	      ta.style.overflow = 'hidden';
-	    }
-
-	    ta.style.height = newHeight + 'px';
-
-	    if (restoreTextAlign) {
-	      ta.style.textAlign = restoreTextAlign;
-	    }
-
-	    if (restoreScrollTops) {
-	      restoreScrollTops();
-	    }
-
-	    if (previousHeight !== newHeight) {
-	      ta.dispatchEvent(new Event('autosize:resized', {
-	        bubbles: true
-	      }));
-	      previousHeight = newHeight;
-	    }
-
-	    if (initialOverflowY !== computed.overflow && !restoreTextAlign) {
-	      var textAlign = computed.textAlign;
-
-	      if (computed.overflow === 'hidden') {
-	        // Webkit fails to reflow text after overflow is hidden,
-	        // even if hiding overflow would allow text to fit more compactly.
-	        // The following is intended to force the necessary text reflow.
-	        ta.style.textAlign = textAlign === 'start' ? 'end' : 'start';
-	      }
-
-	      setHeight({
-	        restoreTextAlign: textAlign,
-	        testForHeightReduction: true
-	      });
-	    }
-	  }
-
-	  function fullSetHeight() {
-	    setHeight({
-	      testForHeightReduction: true,
-	      restoreTextAlign: null
-	    });
-	  }
-
-	  var handleInput = function () {
-	    var previousValue = ta.value;
-	    return function () {
-	      setHeight({
-	        // if previousValue is '', check for height shrinkage because the placeholder may be taking up space instead
-	        // if new value is merely appending to previous value, skip checking for height deduction
-	        testForHeightReduction: previousValue === '' || !ta.value.startsWith(previousValue),
-	        restoreTextAlign: null
-	      });
-	      previousValue = ta.value;
-	    };
-	  }();
-
-	  var destroy = function (style) {
-	    ta.removeEventListener('autosize:destroy', destroy);
-	    ta.removeEventListener('autosize:update', fullSetHeight);
-	    ta.removeEventListener('input', handleInput);
-	    window.removeEventListener('resize', fullSetHeight); // future todo: consider replacing with ResizeObserver
-
-	    Object.keys(style).forEach(function (key) {
-	      return ta.style[key] = style[key];
-	    });
-	    assignedElements["delete"](ta);
-	  }.bind(ta, {
-	    height: ta.style.height,
-	    resize: ta.style.resize,
-	    textAlign: ta.style.textAlign,
-	    overflowY: ta.style.overflowY,
-	    overflowX: ta.style.overflowX,
-	    wordWrap: ta.style.wordWrap
-	  });
-
-	  ta.addEventListener('autosize:destroy', destroy);
-	  ta.addEventListener('autosize:update', fullSetHeight);
-	  ta.addEventListener('input', handleInput);
-	  window.addEventListener('resize', fullSetHeight); // future todo: consider replacing with ResizeObserver
-
-	  ta.style.overflowX = 'hidden';
-	  ta.style.wordWrap = 'break-word';
-	  assignedElements.set(ta, {
-	    destroy: destroy,
-	    update: fullSetHeight
-	  });
-	  fullSetHeight();
-	}
-
-	function destroy(ta) {
-	  var methods = assignedElements.get(ta);
-
-	  if (methods) {
-	    methods.destroy();
-	  }
-	}
-
-	function update(ta) {
-	  var methods = assignedElements.get(ta);
-
-	  if (methods) {
-	    methods.update();
-	  }
-	}
-
-	var autosize = null; // Do nothing in Node.js environment
-
-	if (typeof window === 'undefined') {
-	  autosize = function autosize(el) {
-	    return el;
-	  };
-
-	  autosize.destroy = function (el) {
-	    return el;
-	  };
-
-	  autosize.update = function (el) {
-	    return el;
-	  };
-	} else {
-	  autosize = function autosize(el, options) {
-	    if (el) {
-	      Array.prototype.forEach.call(el.length ? el : [el], function (x) {
-	        return assign(x);
-	      });
-	    }
-
-	    return el;
-	  };
-
-	  autosize.destroy = function (el) {
-	    if (el) {
-	      Array.prototype.forEach.call(el.length ? el : [el], destroy);
-	    }
-
-	    return el;
-	  };
-
-	  autosize.update = function (el) {
-	    if (el) {
-	      Array.prototype.forEach.call(el.length ? el : [el], update);
-	    }
-
-	    return el;
-	  };
-	}
-
-	var autosize$1 = autosize;
-
-	return autosize$1;
-
-})));
-
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   autosize: function() { return /* reexport module object */ autosize_dist_autosize__WEBPACK_IMPORTED_MODULE_0__; }\n/* harmony export */ });\n/* harmony import */ var autosize_dist_autosize__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! autosize/dist/autosize */ \"./node_modules/autosize/dist/autosize.js\");\n/* harmony import */ var autosize_dist_autosize__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(autosize_dist_autosize__WEBPACK_IMPORTED_MODULE_0__);\n\n\n\n//# sourceURL=webpack://Vuexy/./libs/autosize/autosize.js?");
 
 /***/ })
 
@@ -319,22 +108,12 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	}();
 /******/ 	
 /************************************************************************/
-var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be in strict mode.
-!function() {
-"use strict";
-/*!***********************************************************!*\
-  !*** ./resources/assets/vendor/libs/autosize/autosize.js ***!
-  \***********************************************************/
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   autosize: function() { return /* reexport module object */ autosize_dist_autosize__WEBPACK_IMPORTED_MODULE_0__; }
-/* harmony export */ });
-/* harmony import */ var autosize_dist_autosize__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! autosize/dist/autosize */ "./node_modules/autosize/dist/autosize.js");
-/* harmony import */ var autosize_dist_autosize__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(autosize_dist_autosize__WEBPACK_IMPORTED_MODULE_0__);
-
-
-}();
+/******/ 	
+/******/ 	// startup
+/******/ 	// Load entry module and return exports
+/******/ 	// This entry module can't be inlined because the eval devtool is used.
+/******/ 	var __webpack_exports__ = __webpack_require__("./libs/autosize/autosize.js");
+/******/ 	
 /******/ 	return __webpack_exports__;
 /******/ })()
 ;

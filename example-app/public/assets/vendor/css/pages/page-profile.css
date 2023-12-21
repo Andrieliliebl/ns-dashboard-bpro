@@ -1,7 +1,6 @@
 .user-profile-header-banner img {
   width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   height: 250px;
 }
 

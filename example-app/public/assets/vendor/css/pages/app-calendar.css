@@ -5,10 +5,8 @@
 .app-calendar-wrapper .app-calendar-sidebar {
   position: absolute;
   overflow: hidden;
-  -ms-flex-positive: 0;
-      flex-grow: 0;
-  -ms-flex-preferred-size: 18.25rem;
-      flex-basis: 18.25rem;
+  flex-grow: 0;
+  flex-basis: 18.25rem;
   left: calc(-18.25rem - 1.2rem);
   height: 100%;
   width: 18.25rem;
@@ -70,7 +68,6 @@
   min-height: 5rem;
 }
 .app-calendar-wrapper .event-sidebar .select2 .select2-selection__choice {
-  display: -ms-flexbox;
   display: flex;
 }
 .app-calendar-wrapper .event-sidebar .select2 .select2-selection__choice .avatar {
@@ -88,8 +85,7 @@
 }
 
 [dir=rtl] .app-calendar-wrapper .fc .fc-toolbar .fc-sidebarToggle-button {
-  -ms-flex-order: 1;
-      order: 1;
+  order: 1;
 }
 [dir=rtl] .app-calendar-wrapper .app-calendar-sidebar {
   left: auto;

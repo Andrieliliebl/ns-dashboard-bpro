@@ -40,8 +40,7 @@
   text-fill-color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  -webkit-animation: shine 2s ease-in-out infinite alternate;
-          animation: shine 2s ease-in-out infinite alternate;
+  animation: shine 2s ease-in-out infinite alternate;
 }
 .landing-hero .hero-sub-title {
   line-height: 28px;
@@ -67,8 +66,7 @@
   width: 80%;
   margin: 0 auto;
   will-change: transform;
-  -webkit-transform-style: preserve-3d;
-          transform-style: preserve-3d;
+  transform-style: preserve-3d;
   transition: all 0.1s;
 }
 .landing-hero .hero-animation-img .hero-dashboard-img img {
@@ -86,18 +84,6 @@
 @media (max-width: 575.98px) {
   .landing-hero-blank {
     padding-top: 7rem;
-  }
-}
-
-@-webkit-keyframes shine {
-  0% {
-    background-position: 0% 50%;
-  }
-  80% {
-    background-position: 50% 90%;
-  }
-  100% {
-    background-position: 91% 100%;
   }
 }
 
@@ -133,23 +119,19 @@
 }
 .landing-reviews .swiper-reviews-carousel .client-logo {
   height: 1.375rem;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 .landing-reviews .swiper-logo-carousel .swiper {
   max-width: 45rem;
 }
 .landing-reviews .swiper-logo-carousel .swiper .swiper-slide {
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
+  justify-content: center;
 }
 .landing-reviews .swiper-logo-carousel .swiper .client-logo {
   max-height: 2.5rem;
   max-width: 95%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 .landing-team .card,
@@ -166,8 +148,7 @@
 }
 .landing-team .team-image-box .card-img-position {
   height: 15rem;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 @media (max-width: 991.98px) {
   .landing-team .team-image-box .card-img-position {
@@ -200,8 +181,7 @@
   position: absolute;
   top: 0;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
 }
 .landing-pricing .card .card-header,
 .landing-pricing .card .card-body {
@@ -262,8 +242,7 @@
   position: absolute;
   top: 0;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
+  transform: translateX(-50%);
   width: 100%;
   height: 100%;
   background: url("../../../img/front-pages/backgrounds/hero-bg-dark.png") center no-repeat;
@@ -274,8 +253,7 @@
 }
 
 [dir=rtl] .landing-team .team-image-box .card-img-position {
-  -webkit-transform: translateX(50%) !important;
-          transform: translateX(50%) !important;
+  transform: translateX(50%) !important;
 }
 [dir=rtl] .landing-pricing .switch .switch-label {
   padding-right: 0;
@@ -292,6 +270,5 @@
 [dir=rtl] .landing-contact .contact-img-box::before {
   inset-block-start: -1.875rem;
   inset-inline-start: -3.125rem;
-  -webkit-transform: rotate(90deg);
-          transform: rotate(90deg);
+  transform: rotate(90deg);
 }

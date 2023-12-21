@@ -76,12 +76,9 @@ html:not([dir=rtl]) .daterangepicker .drp-calendar:not(.single).right .next {
   height: 1.75rem;
   width: 1.75rem;
   border-radius: 50rem;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: center;
-      justify-content: center;
-  -ms-flex-align: center;
-      align-items: center;
+  justify-content: center;
+  align-items: center;
 }
 .daterangepicker .calendar-table .next span,
 .daterangepicker .calendar-table .prev span {
@@ -94,25 +91,21 @@ html:not([dir=rtl]) .daterangepicker .drp-calendar:not(.single).right .next {
 }
 .daterangepicker .calendar-table .prev span {
   margin-right: -0.25rem;
-  -webkit-transform: rotate(135deg);
-          transform: rotate(135deg);
+  transform: rotate(135deg);
 }
 [dir=rtl] .daterangepicker .calendar-table .prev span {
   margin-left: -0.25rem;
   margin-right: 0;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 .daterangepicker .calendar-table .next span {
   margin-left: -0.25rem;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 [dir=rtl] .daterangepicker .calendar-table .next span {
   margin-left: 0;
   margin-right: -0.25rem;
-  -webkit-transform: rotate(135deg);
-          transform: rotate(135deg);
+  transform: rotate(135deg);
 }
 .daterangepicker .calendar-table table {
   border: 0;

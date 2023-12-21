@@ -384,9 +384,7 @@ $(function () {
               '</div>' +
               '</div>' +
               '<div class="d-flex flex-column">' +
-              '<a class="text-body fw-medium" href="' +
-              baseUrl +
-              'app/logistics/fleet">VOL-' +
+              '<a class="text-body fw-medium" href="app-logistics-fleet.html">VOL-' +
               $location +
               '</a>' +
               '</div>' +
