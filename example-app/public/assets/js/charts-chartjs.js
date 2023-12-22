@@ -3,7 +3,7 @@
  */
 'use strict';
 
-(function () {
+$(function () {
   // Color Variables
   const purpleColor = '#836AF9',
     yellowColor = '#ffe800',
@@ -17,6 +17,9 @@
     blueLightColor = '#84D0FF';
 
   let cardColor, headingColor, labelColor, borderColor, legendColor;
+
+  const isDarkStyle = false
+  const isRtl = false
 
   if (isDarkStyle) {
     cardColor = config.colors_dark.cardColor;
@@ -1119,4 +1122,4 @@
       }
     });
   }
-})();
+});

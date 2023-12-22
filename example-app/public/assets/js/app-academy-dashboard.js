@@ -9,6 +9,8 @@
 (function () {
   let labelColor, headingColor, borderColor;
 
+  const isDarkStyle = false
+
   if (isDarkStyle) {
     labelColor = config.colors_dark.textMuted;
     headingColor = config.colors_dark.headingColor;

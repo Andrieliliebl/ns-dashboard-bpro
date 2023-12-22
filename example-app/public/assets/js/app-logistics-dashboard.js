@@ -4,16 +4,13 @@
 
 'use strict';
 
-(function () {
+$(function () {
   let labelColor, headingColor;
 
-  if (isDarkStyle) {
-    labelColor = config.colors_dark.textMuted;
-    headingColor = config.colors_dark.headingColor;
-  } else {
+
     labelColor = config.colors.textMuted;
     headingColor = config.colors.headingColor;
-  }
+  
 
   // Chart Colors
   const chartColors = {
@@ -217,16 +214,14 @@
   const deliveryExceptionsChartE1 = document.querySelector('#deliveryExceptionsChart'),
     deliveryExceptionsChartConfig = {
       chart: {
-        height: 420,
+        height: 250,
         parentHeightOffset: 0,
         type: 'donut'
       },
-      labels: ['Incorrect address', 'Weather conditions', 'Federal Holidays', 'Damage during transit'],
-      series: [13, 25, 22, 40],
+      labels: ['75%', '25%'],
+      series: [75, 25],
       colors: [
         chartColors.donut.series1,
-        chartColors.donut.series2,
-        chartColors.donut.series3,
         chartColors.donut.series4
       ],
       stroke: {
@@ -239,7 +234,7 @@
         }
       },
       legend: {
-        show: true,
+        show: false,
         position: 'bottom',
         offsetY: 10,
         markers: {
@@ -296,11 +291,10 @@
               },
               total: {
                 show: true,
-                fontSize: '.75rem',
-                label: 'AVG. Exceptions',
+                fontSize: '1.0rem',
                 color: labelColor,
                 formatter: function (w) {
-                  return '30%';
+                  return w.config.series[0] + '%'
                 }
               }
             }
@@ -322,7 +316,7 @@
     const deliveryExceptionsChart = new ApexCharts(deliveryExceptionsChartE1, deliveryExceptionsChartConfig);
     deliveryExceptionsChart.render();
   }
-})();
+});
 
 // DataTable (jquery)
 // --------------------------------------------------------------------
