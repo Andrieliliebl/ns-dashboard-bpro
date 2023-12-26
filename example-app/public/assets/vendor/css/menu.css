@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #ffffff !important;
+    color: #757570;
+}
+
+strong {
+    color: #5b5b56;
+    font-family: NeuePlacTexThin;
+}
+
+
+li {
+    list-style: none;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.logo-style img {
+    max-width: auto;
+    max-height: 10vh;
+    padding: 1.5vh;
+}
+
+.nav-style {
+    box-shadow: 0 0.5rem 0.5rem -0.5rem rgba(0, 0, 0, 0.2) !important;
+    height: 9vh;
+    margin: 0 !important;
+    padding: 0 !important;
+    align-items: baseline !important;
+}
