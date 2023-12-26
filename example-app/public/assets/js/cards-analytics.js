@@ -4,8 +4,10 @@
 
 'use strict';
 
-(function () {
+$(function () {
   let cardColor, headingColor, legendColor, labelColor, borderColor;
+const isDarkStyle = false;
+
   if (isDarkStyle) {
     cardColor = config.colors_dark.cardColor;
     labelColor = config.colors_dark.textMuted;
@@ -1420,4 +1422,4 @@
     const deliveryExceptionsChart = new ApexCharts(deliveryExceptionsChartE1, deliveryExceptionsChartConfig);
     deliveryExceptionsChart.render();
   }
-})();
+});

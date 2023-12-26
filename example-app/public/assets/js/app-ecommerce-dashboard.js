@@ -4,8 +4,10 @@
 
 'use strict';
 
-(function () {
+$(function () {
   let cardColor, labelColor, headingColor, borderColor, legendColor;
+
+  const isDarkStyle = false
 
   if (isDarkStyle) {
     cardColor = config.colors_dark.cardColor;
@@ -1012,4 +1014,4 @@
     $('.dataTables_filter .form-control').removeClass('form-control-sm');
     $('.dataTables_length .form-select').removeClass('form-select-sm');
   }, 300);
-})();
+});
