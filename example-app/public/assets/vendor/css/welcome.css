@@ -1,27 +1,7 @@
 * {
-    box-sizing: border-box;
+    box-sizing: border-box!important;
 }
 
-
-.ns-title-ctn {
-    background-color: #fff!important;
-    display: flex !important;
-    align-items: start !important;
-}
-
-.ns-subtitle{
-    display: flex !important;
-    align-items: start !important;
-    text-align: start !important;
-}
-
-.ns-subtitle-center {
-    display: flex !important;
-    align-items: center!important;
-    text-align: center!important;
-    padding: 1.5rem !important;
-    margin: 0rem !important;
-    margin: 1rem !important;
-    padding-top: 1.5rem !important;
-
+.ns-full-body {
+    padding: 3rem!important;
 }

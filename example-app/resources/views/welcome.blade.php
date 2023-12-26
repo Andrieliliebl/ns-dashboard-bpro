@@ -55,23 +55,242 @@
 
 <body>
     <div>@include('menu')</div>
-    <div class="ns-full-body container-fluid text-center m-0 p-0 c">
+    <div class="ns-full-body container-fluid text-start m-0 px-5">
         <div class="ns-first-page row m-0 p-0">
+            <h3 class="py-3 mb-4 ">
+                <span class="text-muted fw-light">Acompanhamento de obra /</span> Dashboard
+            </h3>
+            <div class="ns-content row mt-4 ms-2">
+                <div class="ns-left-ctn col-7">
+
+                    <div class="ns-left-top-ctn planejamento-de-obra row">
+
+                        <div class="ns-plan-obra col-8">
+                            <h3 class="">Planejamento de obra</h3>
+                            <div class="row mt-4">
+                                <div class="col-4 mt-4">
+                                    <h3 class="m-0 text-dark text-center">75<i class="px-2 ti ti-circle-filled text-dark mb-2"></i></h3>
+                                    <small class="text-center">Dias planejados</small>
+                                </div>
+                                <div class="col-4 mt-4">
+                                    <h3 class="m-0 text-dark text-center">25<i class="px-2 ti ti-circle-filled text-success mb-2"></i></h3>
+                                    <small class="text-center">Dias remanescentes</small>
+                                </div>
+                                <div class="col-10 my-3 mt-5">
+                                    <div class="progress ms-5 mb-3 mt-3 ns-progress-bar" style="height:40px;">
+                                        <div class="progress-bar bg-dark" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                    <hr class="mb-0 ms-5 mt-0">
+                                    <span class="d-inline text-start small" style="margin-left: 7%">22 may</span>
+                                    <span class="d-inline small" style="margin-left: 40%">today</span>
+                                    <span class="d-inline text-end small" style="margin-left: 25%">28 mar</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="ns-porcentagem-realizada col-4 d-flex justify-center">
+                            <div class="ns-left-rightdiv-ctn row">
+                                <h3 class="">% Realizada</h3>
+                                <div class="p-0 m-0 justify-start">
+                                    <div id="deliveryExceptionsChart"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ns-left-bottom-ctn ns-desempenho-disciplina row mt-4">
+                        <div class="card mb-5">
+                            <div class="card-datatable table-responsive">
+                                <h3 class="">Desempenho por disciplina</h3>
+                                <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
+                                    <table class="datatables-projects table border-top dataTable no-footer dtr-column" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info" style="width: 922px;">
+                                        <thead style="text-align:center !important;">
+                                            <tr>
+                                                <th class="control sorting_disabled dtr-hidden" rowspan="1" colspan="1" style="width: 0px; display: none;" aria-label=""></th>
+                                                <th class="sorting_disabled dt-checkboxes-cell dt-checkboxes-select-all" rowspan="1" colspan="1" style="width: 18px;" data-col="1" aria-label=""><input type="checkbox" class="form-check-input"></th>
+                                                <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="text-align:center !important;">Disciplina</th>
+                                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Leader: activate to sort column ascending" style="text-align:center !important;">% completa</th>
+                                                <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="text-align:center !important;">Data início | fim</th>
+                                                <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="text-align:center !important;">Dias totais</th>
+                                                <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="text-align:center !important;">Dias Planejados</th>
+                                                <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="text-align:center !important;">Dias remanescentes</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr class="even">
+                                                <td class="  control" tabindex="0" style="display: none;"></td>
+                                                <td class="  dt-checkboxes-cell"><input type="checkbox" class="dt-checkboxes form-check-input"></td>
+                                                <td>Arquitetura</td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="progress w-100 me-3" style="height: 6px;">
+                                                            <div class="progress-bar" style="width: 45%" aria-valuenow="45%" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div><span>45%</span>
+                                                    </div>
+                                                </td>
+                                                <td>Owen</td>
+                                                <td>Owen</td>
+                                                <td>Owen</td>
+                                                <td>Owen</td>
+                                            </tr>
+                                            <tr class="even">
+                                                <td class="  control" tabindex="0" style="display: none;"></td>
+                                                <td class="  dt-checkboxes-cell"><input type="checkbox" class="dt-checkboxes form-check-input"></td>
+                                                <td>Hidrossanitário</td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="progress w-100 me-3" style="height: 6px;">
+                                                            <div class="progress-bar" style="width: 45%" aria-valuenow="45%" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div><span>45%</span>
+                                                    </div>
+                                                </td>
+                                                <td>Owen</td>
+                                                <td>Owen</td>
+                                                <td>Owen</td>
+                                                <td>Owen</td>
+
+
+                                            </tr>
+                                            <tr class="even">
+                                                <td class="  control" tabindex="0" style="display: none;"></td>
+                                                <td class="  dt-checkboxes-cell"><input type="checkbox" class="dt-checkboxes form-check-input"></td>
+                                                <td>Elétrica</td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="progress w-100 me-3" style="height: 6px;">
+                                                            <div class="progress-bar" style="width: 45%" aria-valuenow="45%" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div><span>45%</span>
+                                                    </div>
+                                                </td>
+                                                <td>Owen</td>
+                                                <td>Owen</td>
+                                                <td>Owen</td>
+                                                <td>Owen</td>
+
+                                            </tr>
+                                            <tr class="even">
+                                                <td class="  control" tabindex="0" style="display: none;"></td>
+                                                <td class="  dt-checkboxes-cell"><input type="checkbox" class="dt-checkboxes form-check-input"></td>
+                                                <td>HVAC</td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="progress w-100 me-3" style="height: 6px;">
+                                                            <div class="progress-bar" style="width: 45%" aria-valuenow="45%" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div><span>45%</span>
+                                                    </div>
+                                                </td>
+                                                <td>Owen</td>
+                                                <td>Owen</td>
+                                                <td>Owen</td>
+                                                <td>Owen</td>
+
+                                            </tr>
+                                            <tr class="even">
+                                                <td class="  control" tabindex="0" style="display: none;"></td>
+                                                <td class="  dt-checkboxes-cell"><input type="checkbox" class="dt-checkboxes form-check-input"></td>
+                                                <td>PPCI</td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="progress w-100 me-3" style="height: 6px;">
+                                                            <div class="progress-bar" style="width: 45%" aria-valuenow="45%" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div><span>45%</span>
+                                                    </div>
+                                                </td>
+                                                <td>Owen</td>
+                                                <td>Owen</td>
+                                                <td>Owen</td>
+                                                <td>Owen</td>
+
+                                            </tr>
+                                            <tr class="even">
+                                                <td class="control" tabindex="0" style="display: none;"></td>
+                                                <td class="dt-checkboxes-cell"><input type="checkbox" class="dt-checkboxes form-check-input"></td>
+                                                <td>Estrutural</td>
+                                                <td>
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="progress w-100 me-3" style="height: 6px;">
+                                                            <div class="progress-bar" style="width: 45%" aria-valuenow="45%" aria-valuemin="0" aria-valuemax="100"></div>
+                                                        </div><span>45%</span>
+                                                    </div>
+                                                </td>
+                                                <td>Owen</td>
+                                                <td>Owen</td>
+                                                <td>Owen</td>
+                                                <td>Owen</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ns-right-ctn col-5">
+                    <div class="ns-acomp-visual row card flex-row m-3">
+                        <div>
+                            <h4 class="card-title ">Acompanhamento visual</h4>
+                        </div>
+                        <div class="ns-pre-vis col-3">
+                            <div class="card icon-card cursor-pointer text-center mb-2 mx-2 border border-1 border-primary" style="border-style: dashed !important;">
+                                <div class="card-body">
+                                    <p class="icon-name text-capitalize text-truncate mb-0">Drone</p>
+                                </div>
+                            </div>
+                            <div class="card icon-card cursor-pointer text-center mb-2 mx-2 border border-1 border-primary" style="border-style: dashed !important;">
+                                <div class="card-body">
+                                    <p class="icon-name text-capitalize text-truncate mb-0">360°</p>
+                                </div>
+                            </div>
+                            <div class="card icon-card cursor-pointer text-center mb-2 mx-2 border border-1 border-primary" style="border-style: dashed !important;">
+                                <div class="card-body">
+                                    <p class="icon-name text-capitalize text-truncate mb-0">4D Real</p>
+                                </div>
+                            </div>
+                            <div class="card icon-card cursor-pointer text-center mb-2 mx-2 border border-1 border-primary" style="border-style: dashed !important;">
+                                <div class="card-body">
+                                    <p class="icon-name text-capitalize text-truncate mb-0">4D Planejado</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ns-vis-timelapse col-9">
+                            <div class="col-12 me-4">
+                                <div class="card-body m-3">
+                                    <div class="bg-label-primary rounded-3 text-center">
+                                        <img class="img-fluid" src="../../assets/img/illustrations/girl-with-laptop.png" alt="Card girl image" width="150" />
+                                    </div>
+                                    <h4 class="mb-0 mt-2">Timelapse</h4>
+                                    <a href="javascript:void(0);" class="btn btn-primary mt-2">Veja em tela cheia</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ns-produtividade row card flex-row mx-3">
+                        <div>
+                            <h3 class="card-title">Produtividade</h3>
+                        </div>
+                        <div class="card-body py-0 pb-2">
+                            <div>
+                                <canvas id="lineChart" class="chartjs" data-height="255"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ns-second-page row m-0 p-0">
             <div class="ns-first-page container-fluid">
-
-                <div class="ns-title-ctn container-fluid card">
-                    <div class="row">
-                        <div class="col-12">
-                            <h1>Acompanhamento de obra</h1>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="ns-first-page row mt-4 ms-2">
+                <h3 class="py-3 mb-4">
+                    <span class="text-muted fw-light">Acompanhamento de projetos /</span> Dashboard
+                </h3>
+                <div class="ns-content row mt-4 ms-2">
                     <div class="ns-left-ctn col-7">
-                        <div class="ns-left-top-ctn row">
-                            <div class="ns-left-leftdiv-ctn col-8">
-                                <h3 class="ns-subtitle">Planejamento de obra</h3>
+
+                        <div class="ns-left-top-ctn planejamento-de-obra row">
+
+                            <div class="ns-plan-obra col-8">
+                                <h3 class="">Planejamento de projetos</h3>
                                 <div class="row mt-4">
                                     <div class="col-4 mt-4">
                                         <h3 class="m-0 text-dark text-center">75<i class="px-2 ti ti-circle-filled text-dark mb-2"></i></h3>
@@ -81,7 +300,7 @@
                                         <h3 class="m-0 text-dark text-center">25<i class="px-2 ti ti-circle-filled text-success mb-2"></i></h3>
                                         <small class="text-center">Dias remanescentes</small>
                                     </div>
-                                    <div class="col-10 my-3">
+                                    <div class="col-10 my-3 mt-5">
                                         <div class="progress ms-5 mb-3 mt-3 ns-progress-bar" style="height:40px;">
                                             <div class="progress-bar bg-dark" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                                             <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -94,38 +313,39 @@
 
                                 </div>
                             </div>
-                            <div class="ns-left-rightdiv-ctn col-4 d-flex justify-center">
+                            <div class="ns-porcentagem-realizada col-4 d-flex justify-center">
                                 <div class="ns-left-rightdiv-ctn row">
-                                    <h3 class="ns-subtitle-center">% Realizada</h3>
-                                    <div class="p-0 m-0">
+                                    <h3 class="">% Realizada</h3>
+                                    <div class="p-0 m-0 justify-start">
                                         <div id="deliveryExceptionsChart"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="ns-left-bottom-ctn row mt-4">
-                            <div class="card mb-4">
+                        <div class="ns-left-bottom-ctn ns-desempenho-disciplina row mt-4">
+                            <div class="card mb-5">
                                 <div class="card-datatable table-responsive">
-                                    <h3 class="ns-subtitle">Desempenho por disciplina</h3>
+                                    <h3 class="">Desempenho por disciplina</h3>
                                     <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
                                         <table class="datatables-projects table border-top dataTable no-footer dtr-column" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info" style="width: 922px;">
                                             <thead style="text-align:center !important;">
                                                 <tr>
                                                     <th class="control sorting_disabled dtr-hidden" rowspan="1" colspan="1" style="width: 0px; display: none;" aria-label=""></th>
                                                     <th class="sorting_disabled dt-checkboxes-cell dt-checkboxes-select-all" rowspan="1" colspan="1" style="width: 18px;" data-col="1" aria-label=""><input type="checkbox" class="form-check-input"></th>
-                                                    <th class="," style="text-align:center !important;" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" aria-sort="descending">Name</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Leader: activate to sort column ascending" style="text-align:center !important;">Leader</th>
-                                                    <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Team" style="text-align:center !important;">Team</th>
-                                                    <th class="w-px-200 sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="text-align:center !important;">Status</th>
-                                                    <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="text-align:center !important;">Actions</th>
+                                                    <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="text-align:center !important;">Disciplina</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Leader: activate to sort column ascending" style="text-align:center !important;">% completa</th>
+                                                    <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="text-align:center !important;">Data início | fim</th>
+                                                    <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="text-align:center !important;">Dias totais</th>
+                                                    <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="text-align:center !important;">Dias Planejados</th>
+                                                    <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="text-align:center !important;">Dias remanescentes</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr class="even">
                                                     <td class="  control" tabindex="0" style="display: none;"></td>
                                                     <td class="  dt-checkboxes-cell"><input type="checkbox" class="dt-checkboxes form-check-input"></td>
-                                                    <td>Owen</td>
+                                                    <td>Arquitetura</td>
                                                     <td>
                                                         <div class="d-flex align-items-center">
                                                             <div class="progress w-100 me-3" style="height: 6px;">
@@ -133,6 +353,7 @@
                                                             </div><span>45%</span>
                                                         </div>
                                                     </td>
+                                                    <td>Owen</td>
                                                     <td>Owen</td>
                                                     <td>Owen</td>
                                                     <td>Owen</td>
@@ -140,7 +361,7 @@
                                                 <tr class="even">
                                                     <td class="  control" tabindex="0" style="display: none;"></td>
                                                     <td class="  dt-checkboxes-cell"><input type="checkbox" class="dt-checkboxes form-check-input"></td>
-                                                    <td>Owen</td>
+                                                    <td>Hidrossanitário</td>
                                                     <td>
                                                         <div class="d-flex align-items-center">
                                                             <div class="progress w-100 me-3" style="height: 6px;">
@@ -151,11 +372,14 @@
                                                     <td>Owen</td>
                                                     <td>Owen</td>
                                                     <td>Owen</td>
+                                                    <td>Owen</td>
+
+
                                                 </tr>
                                                 <tr class="even">
                                                     <td class="  control" tabindex="0" style="display: none;"></td>
                                                     <td class="  dt-checkboxes-cell"><input type="checkbox" class="dt-checkboxes form-check-input"></td>
-                                                    <td>Owen</td>
+                                                    <td>Elétrica</td>
                                                     <td>
                                                         <div class="d-flex align-items-center">
                                                             <div class="progress w-100 me-3" style="height: 6px;">
@@ -166,11 +390,13 @@
                                                     <td>Owen</td>
                                                     <td>Owen</td>
                                                     <td>Owen</td>
+                                                    <td>Owen</td>
+
                                                 </tr>
                                                 <tr class="even">
                                                     <td class="  control" tabindex="0" style="display: none;"></td>
                                                     <td class="  dt-checkboxes-cell"><input type="checkbox" class="dt-checkboxes form-check-input"></td>
-                                                    <td>Owen</td>
+                                                    <td>HVAC</td>
                                                     <td>
                                                         <div class="d-flex align-items-center">
                                                             <div class="progress w-100 me-3" style="height: 6px;">
@@ -178,6 +404,41 @@
                                                             </div><span>45%</span>
                                                         </div>
                                                     </td>
+                                                    <td>Owen</td>
+                                                    <td>Owen</td>
+                                                    <td>Owen</td>
+                                                    <td>Owen</td>
+
+                                                </tr>
+                                                <tr class="even">
+                                                    <td class="  control" tabindex="0" style="display: none;"></td>
+                                                    <td class="  dt-checkboxes-cell"><input type="checkbox" class="dt-checkboxes form-check-input"></td>
+                                                    <td>PPCI</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="progress w-100 me-3" style="height: 6px;">
+                                                                <div class="progress-bar" style="width: 45%" aria-valuenow="45%" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div><span>45%</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>Owen</td>
+                                                    <td>Owen</td>
+                                                    <td>Owen</td>
+                                                    <td>Owen</td>
+
+                                                </tr>
+                                                <tr class="even">
+                                                    <td class="control" tabindex="0" style="display: none;"></td>
+                                                    <td class="dt-checkboxes-cell"><input type="checkbox" class="dt-checkboxes form-check-input"></td>
+                                                    <td>Estrutural</td>
+                                                    <td>
+                                                        <div class="d-flex align-items-center">
+                                                            <div class="progress w-100 me-3" style="height: 6px;">
+                                                                <div class="progress-bar" style="width: 45%" aria-valuenow="45%" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            </div><span>45%</span>
+                                                        </div>
+                                                    </td>
+                                                    <td>Owen</td>
                                                     <td>Owen</td>
                                                     <td>Owen</td>
                                                     <td>Owen</td>
@@ -186,212 +447,17 @@
                                         </table>
                                     </div>
                                 </div>
-
-
-
-
                             </div>
                         </div>
                     </div>
-                    <div class="ns-right-content-ctn col-5">
-                        <div class="ns-right-top-content row card flex-row m-3">
-                            <div class="col-3 py-4">
-                                <div class="card icon-card cursor-pointer text-center mb-2 mx-2 border border-1 border-primary" style="border-style: dashed !important;">
-                                    <div class="card-body"> <i class="ti ti-shopping-cart mb-2 text-primary bg-primary-subtle p-1"></i>
-                                        <p class="icon-name text-capitalize text-truncate mb-0">Drone</p>
-                                    </div>
-                                </div>
-                                <div class="card icon-card cursor-pointer text-center  mb-2 mx-2 border border-1 border-primary" style="border-style: dashed !important;">
-                                    <div class="card-body"> <i class="ti ti-shopping-cart mb-2 text-primary bg-primary-subtle p-1"></i>
-                                        <p class="icon-name text-capitalize text-truncate mb-0">Visão 360</p>
-                                    </div>
-                                </div>
-                                <div class="card icon-card cursor-pointer text-center  mb-2 mx-2 border border-1 border-primary" style="border-style: dashed !important;">
-                                    <div class="card-body"> <i class="ti ti-shopping-cart mb-2 text-primary bg-primary-subtle p-1"></i>
-                                        <p class="icon-name text-capitalize text-truncate mb-0">4D Real</p>
-                                    </div>
-                                </div>
-                                <div class="card icon-card cursor-pointer text-center  mb-2 mx-2 border border-1 border-primary" style="border-style: dashed !important;">
-                                    <div class="card-body"> <i class="ti ti-shopping-cart mb-2 text-primary bg-primary-subtle p-1"></i>
-                                        <p class="icon-name text-capitalize text-truncate mb-0">4D Planejado</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-9 py-4">
-                                <div class="col-12 me-4">
-                                    <div class="card h-100">
-                                        <div class="card-body m-4">
-                                            <div class="bg-label-primary rounded-3 text-center pt-4">
-                                                <img class="img-fluid" src="../../assets/img/illustrations/girl-with-laptop.png" alt="Card girl image" width="200" />
-                                            </div>
-                                            <h3 class="mb-0 mt-3">Timelapse</h3>
-                                            <a href="javascript:void(0);" class="btn btn-warning w-100 mt-3">Veja em tela cheia</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="ns-right-bottom-ctn row">
-                            <div class="card m-4">
-                                <div>
-                                    <h3 class="card-title mb-0 pb-0 ns-subtitle">Produtividade</h3>
-                                </div>
-
-                                <div class="card-body p-0">
-                                    <div>
-                                        <canvas id="lineChart" class="chartjs" data-height="255"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                    </div>
-                </div>
-
-                <hr>
-
-
-                <!-- second-->
-
-
-                <div class="ns-second-page row mt-4 ms-2">
-                    <div class="ns-left-ctn col-7">
-                        <div class="ns-left-top-ctn row">
-                            <div class="ns-left-leftdiv-ctn col-8">
-                                <h3 class="ns-subtitle">Planejamento de projetos</h3>
-                                <div class="row mt-4">
-                                    <div class="col-4">
-                                        <h3 class="m-0 text-dark text-center">75<i class="px-2 ti ti-circle-filled text-dark mb-2"></i></h3>
-                                        <small class="text-center">Dias planejados</small>
-                                    </div>
-                                    <div class="col-4">
-                                        <h3 class="m-0 text-dark text-center">25<i class="px-2 ti ti-circle-filled text-success mb-2"></i></h3>
-                                        <small class="text-center">Dias remanescentes</small>
-                                    </div>
-                                    <div class="col-10 my-3">
-                                        <div class="progress ms-5 mb-3 mt-3 ns-progress-bar" style="height:40px;">
-                                            <div class="progress-bar bg-dark" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                            <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                        </div>
-                                        <hr class="mb-0 ms-5 mt-0">
-                                        <span class="d-inline text-start small" style="margin-left: 7%">22 may</span>
-                                        <span class="d-inline small" style="margin-left: 40%">today</span>
-                                        <span class="d-inline text-end small" style="margin-left: 25%">28 mar</span>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <div class="ns-left-rightdiv-ctn col-4 d-flex justify-center">
-                                <div class="ns-left-rightdiv-ctn row">
-                                    <h3 class="ns-subtitle-center">% Realizada</h3>
-                                    <div class="p-0 m-0">
-                                        <div id="deliveryExceptionsChart"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="ns-left-bottom-ctn row mt-4">
-                            <div class="card mb-4">
-                                <div class="card-datatable table-responsive">
-                                    <h3 class="ns-subtitle">Desempenho por disciplina</h3>
-                                    <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
-                                        <table class="datatables-projects table border-top dataTable no-footer dtr-column" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info" style="width: 922px;">
-                                            <thead style="text-align:center !important;">
-                                                <tr>
-                                                    <th class="control sorting_disabled dtr-hidden" rowspan="1" colspan="1" style="width: 0px; display: none;" aria-label=""></th>
-                                                    <th class="sorting_disabled dt-checkboxes-cell dt-checkboxes-select-all" rowspan="1" colspan="1" style="width: 18px;" data-col="1" aria-label=""><input type="checkbox" class="form-check-input"></th>
-                                                    <th class="," style="text-align:center !important;" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" aria-sort="descending">Name</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Leader: activate to sort column ascending" style="text-align:center !important;">Leader</th>
-                                                    <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Team" style="text-align:center !important;">Team</th>
-                                                    <th class="w-px-200 sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="text-align:center !important;">Status</th>
-                                                    <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="text-align:center !important;">Actions</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr class="even">
-                                                    <td class="  control" tabindex="0" style="display: none;"></td>
-                                                    <td class="  dt-checkboxes-cell"><input type="checkbox" class="dt-checkboxes form-check-input"></td>
-                                                    <td>Owen</td>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="progress w-100 me-3" style="height: 6px;">
-                                                                <div class="progress-bar" style="width: 45%" aria-valuenow="45%" aria-valuemin="0" aria-valuemax="100"></div>
-                                                            </div><span>45%</span>
-                                                        </div>
-                                                    </td>
-                                                    <td>Owen</td>
-                                                    <td>Owen</td>
-                                                    <td>Owen</td>
-                                                </tr>
-                                                <tr class="even">
-                                                    <td class="  control" tabindex="0" style="display: none;"></td>
-                                                    <td class="  dt-checkboxes-cell"><input type="checkbox" class="dt-checkboxes form-check-input"></td>
-                                                    <td>Owen</td>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="progress w-100 me-3" style="height: 6px;">
-                                                                <div class="progress-bar" style="width: 45%" aria-valuenow="45%" aria-valuemin="0" aria-valuemax="100"></div>
-                                                            </div><span>45%</span>
-                                                        </div>
-                                                    </td>
-                                                    <td>Owen</td>
-                                                    <td>Owen</td>
-                                                    <td>Owen</td>
-                                                </tr>
-                                                <tr class="even">
-                                                    <td class="  control" tabindex="0" style="display: none;"></td>
-                                                    <td class="  dt-checkboxes-cell"><input type="checkbox" class="dt-checkboxes form-check-input"></td>
-                                                    <td>Owen</td>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="progress w-100 me-3" style="height: 6px;">
-                                                                <div class="progress-bar" style="width: 45%" aria-valuenow="45%" aria-valuemin="0" aria-valuemax="100"></div>
-                                                            </div><span>45%</span>
-                                                        </div>
-                                                    </td>
-                                                    <td>Owen</td>
-                                                    <td>Owen</td>
-                                                    <td>Owen</td>
-                                                </tr>
-                                                <tr class="even">
-                                                    <td class="  control" tabindex="0" style="display: none;"></td>
-                                                    <td class="  dt-checkboxes-cell"><input type="checkbox" class="dt-checkboxes form-check-input"></td>
-                                                    <td>Owen</td>
-                                                    <td>
-                                                        <div class="d-flex align-items-center">
-                                                            <div class="progress w-100 me-3" style="height: 6px;">
-                                                                <div class="progress-bar" style="width: 45%" aria-valuenow="45%" aria-valuemin="0" aria-valuemax="100"></div>
-                                                            </div><span>45%</span>
-                                                        </div>
-                                                    </td>
-                                                    <td>Owen</td>
-                                                    <td>Owen</td>
-                                                    <td>Owen</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-
-
-
-
-                            </div>
-                        </div>
-                    </div>
-
 
                     <div class="ns-right-content-ctn col-5">
                         <div class="row ns-right-top mt-3">
                             <div class="col-7">
                                 <div class="card">
-                                    <div class="card-header">
-                                        <div class="d-flex justify-content-between">
-                                            <h4 class="ns-subtitle p-0 m-0">Lista mestra</h4>
-                                            <p class="card-text text-success">+18.2%</p>
+                                    <div class="card-header d-flex justify-content-between">
+                                        <div class="card-title mb-0">
+                                            <h5 class="m-0 me-2">Lista mestra</h5>
                                         </div>
                                     </div>
                                     <div class="card-body">
@@ -433,62 +499,81 @@
                                 </div>
                             </div>
 
-                            <div class="col-5">
-                                <div class="card">
-                                    <div class="card-header pb-0">
-                                        <h4 class="ns-subtitle">Panorama de aprovações</h4>
+                            <div class="col-5 card m-0 px-2 d-flex">
+
+                                <div class="card-header d-flex justify-content-between">
+                                    <div class="card-title mb-0">
+                                        <h5 class="m-0 me-2">Aprovações</h5>
                                     </div>
-                                    <div class="card-body">
-                                        <ul class="p-0 m-0">
-                                            <li class="d-flex mb-4 pb-1">
-                                                <div class="avatar flex-shrink-0 me-3">
-                                                    <span class="avatar-initial rounded bg-label-primary"><i class="ti ti-package"></i></span>
-                                                </div>
-                                                <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                                    <div class="me-2">
-                                                        <h6 class="mb-0 fw-normal">Packages in transit</h6>
-                                                        <small class="text-success fw-normal d-block">
-                                                            <i class="ti ti-chevron-up mb-1"></i>
-                                                            25.8%
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="d-flex mb-1">
-                                                <div class="avatar flex-shrink-0 me-3">
-                                                    <span class="avatar-initial rounded bg-label-info"><i class="ti ti-truck"></i></span>
-                                                </div>
-                                                <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
-                                                    <div class="me-2">
-                                                        <h6 class="mb-0 fw-normal">Packages out for delivery</h6>
-                                                        <small class="text-success fw-normal d-block">
-                                                            <i class="ti ti-chevron-up mb-1"></i>
-                                                            4.3%
-                                                        </small>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                        </ul>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-6 card">
+                                            <div class="card-body text-center m-0 p-0">
+                                                <p class="m-0">6</p>
+                                                <small>Aprovadas</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-6 card">
+                                            <div class="card-body text-center m-0 p-0">
+                                                <p class="m-0">6</p>
+                                                <small>Reprovadas</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-4 card pt-3">
+                                            <div class="card-body text-center m-0 p-0">
+                                                <p class="m-0">35</p>
+                                                <small>Nível 1</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 card pt-3">
+                                            <div class="card-body text-center m-0 p-0">
+                                                <p class="m-0">35</p>
+                                                <small>Nível 1</small>
+                                            </div>
+                                        </div>
+                                        <div class="col-4 card pt-3">
+                                            <div class="card-body text-center m-0 p-0">
+                                                <p class="m-0">35</p>
+                                                <small>Nível 1</small>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
+
                         <div class="row ns-right-middle mt-3">
-                            <div class="col-4">
-                                <div class="card ">
-                                    <div class="card-header pb-0">
-                                        <h4 class="ns-subtitle">Atividades</h4>
+                            <div class="col-5">
+                                <div class="card">
+                                    <div class="card-header d-flex justify-content-between">
+                                        <div class="card-title mb-0">
+                                            <h5 class="m-0 me-2">Atividades</h5>
+                                        </div>
                                     </div>
                                     <div class="card-body">
-                                        <div id="expensesChart"></div>
-                                        <div class="mt-md-2 text-center mt-lg-3 mt-3">
-                                            <small class="text-muted mt-3">$21k Expenses more than last month</small>
+                                        <div class="row">
+                                            <div id="expensesChart"></div>
+                                        </div>
+                                        <div class="row d-flex justify-content-between mt-4">
+                                            <div class="col-5 card">
+                                                <span class="avatar-initial rounded"><i class="ti ti-clock ti-sm"></i></span>
+                                                <h5 class="ms-1 mb-0 mt-1">42</h5>
+                                                <p class="mb-1">Planejadas</p>
+                                            </div>
+                                            <div class="col-5 card">
+                                                <span class="avatar-initial rounded"><i class="ti ti-alert-octagon ti-sm"></i></span>
+                                                <h4 class="ms-1 mb-0">42</h4>
+                                                <p class="mb-1">Executadas</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-8">
+                            <div class="col-7">
                                 <div class="card">
                                     <div class="card-header d-flex justify-content-between">
                                         <div class="card-title mb-0">
@@ -507,8 +592,7 @@
                                 <div class="card">
                                     <div class="card-header pb-0 d-flex justify-content-between">
                                         <div class="card-title mb-0">
-                                            <h5 class="mb-0">Support Tracker</h5>
-                                            <small class="text-muted">Last 7 Days</small>
+                                            <h5 class="mb-0">Análise técnica de projetos</h5>
                                         </div>
                                         <div class="dropdown">
                                             <button class="btn p-0" type="button" id="supportTrackerMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -523,29 +607,29 @@
                                     <div class="card-body row m-0">
                                         <div class="col-12 col-sm-4 col-md-12 col-lg-4">
                                             <div class="mt-lg-4 mt-lg-2 mb-lg-4 mb-2 pt-1">
-                                                <h1 class="mb-0">164</h1>
-                                                <p class="mb-0">Total Tickets</p>
+                                                <h3 class="mb-0">100</h3>
+                                                <p class="mb-0">Total de atividades</p>
                                             </div>
                                             <ul class="p-0 m-0">
                                                 <li class="d-flex gap-3 align-items-center mb-lg-3 pt-2 pb-1">
                                                     <div class="badge rounded bg-label-primary p-1"><i class="ti ti-ticket ti-sm"></i></div>
                                                     <div>
-                                                        <h6 class="mb-0 text-nowrap">New Tickets</h6>
-                                                        <small class="text-muted">142</small>
+                                                        <h6 class="mb-0 text-nowrap">Criadas</h6>
+                                                        <small class="text-muted">100</small>
                                                     </div>
                                                 </li>
                                                 <li class="d-flex gap-3 align-items-center mb-lg-3 pb-1">
                                                     <div class="badge rounded bg-label-info p-1"><i class="ti ti-circle-check ti-sm"></i></div>
                                                     <div>
-                                                        <h6 class="mb-0 text-nowrap">Open Tickets</h6>
-                                                        <small class="text-muted">28</small>
+                                                        <h6 class="mb-0 text-nowrap">Aprovadas</h6>
+                                                        <small class="text-muted">85</small>
                                                     </div>
                                                 </li>
                                                 <li class="d-flex gap-3 align-items-center pb-1">
                                                     <div class="badge rounded bg-label-warning p-1"><i class="ti ti-clock ti-sm"></i></div>
                                                     <div>
-                                                        <h6 class="mb-0 text-nowrap">Response Time</h6>
-                                                        <small class="text-muted">1 Day</small>
+                                                        <h6 class="mb-0 text-nowrap">Pendentes de revisão</h6>
+                                                        <small class="text-muted">15</small>
                                                     </div>
                                                 </li>
                                             </ul>
@@ -557,16 +641,11 @@
                                 </div>
                             </div>
                         </div>
-
-
                     </div>
-
                 </div>
             </div>
 
         </div>
-    </div>
-    </div>
 </body>
 
 </html>
