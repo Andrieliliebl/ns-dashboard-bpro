@@ -5,7 +5,7 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar fixed-top navbar-expand-lg">
         <div class="container-fluid nav-style">
             <a class="navbar-brand logo-style" href="#"><img src="assets/logo.png" style="height: 7vh;"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">

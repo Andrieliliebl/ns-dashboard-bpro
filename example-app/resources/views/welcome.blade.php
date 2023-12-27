@@ -55,31 +55,32 @@
 
 <body>
     <div>@include('menu')</div>
-    <div class="ns-full-body container-fluid text-start m-0 px-5">
-        <div class="ns-first-page row m-0 p-0">
-            <h3 class="py-3 mb-4 ">
+
+    <div class="ns-full-body container-fluid text-start m-0 px-5 mt-5">
+        <div class="ns-first-page row m-0 p-0 mt-4">
+            <h2 class="py-3 mb-4 ">
                 <span class="text-muted fw-light">Acompanhamento de obra /</span> Dashboard
-            </h3>
+            </h2>
             <div class="ns-content row mt-4 ms-2">
                 <div class="ns-left-ctn col-7">
 
                     <div class="ns-left-top-ctn planejamento-de-obra row">
 
                         <div class="ns-plan-obra col-8">
-                            <h3 class="">Planejamento de obra</h3>
-                            <div class="row mt-4">
+                            <h3>Planejamento de obra</h3>
+                            <div class="row">
                                 <div class="col-4 mt-4">
                                     <h3 class="m-0 text-dark text-center">75<i class="px-2 ti ti-circle-filled text-dark mb-2"></i></h3>
-                                    <small class="text-center">Dias planejados</small>
+                                    <small class="text-center ms-4">Dias planejados</small>
                                 </div>
                                 <div class="col-4 mt-4">
-                                    <h3 class="m-0 text-dark text-center">25<i class="px-2 ti ti-circle-filled text-success mb-2"></i></h3>
+                                    <h3 class="m-0 text-dark text-center">25<i class="px-2 ti ti-circle-filled ns-text-blue mb-2"></i></h3>
                                     <small class="text-center">Dias remanescentes</small>
                                 </div>
                                 <div class="col-10 my-3 mt-5">
                                     <div class="progress ms-5 mb-3 mt-3 ns-progress-bar" style="height:40px;">
                                         <div class="progress-bar bg-dark" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                        <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar ns-bg-blue" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                     <hr class="mb-0 ms-5 mt-0">
                                     <span class="d-inline text-start small" style="margin-left: 7%">22 may</span>
@@ -226,10 +227,11 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="ns-right-ctn col-5">
                     <div class="ns-acomp-visual row card flex-row m-3">
                         <div>
-                            <h4 class="card-title ">Acompanhamento visual</h4>
+                            <h3 class="card-title ">Acompanhamento visual</h3>
                         </div>
                         <div class="ns-pre-vis col-3">
                             <div class="card icon-card cursor-pointer text-center mb-2 mx-2 border border-1 border-primary" style="border-style: dashed !important;">
@@ -253,14 +255,14 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="ns-vis-timelapse col-9">
+                        <div class="ns-vis-timelapse col-9 text-center">
                             <div class="col-12 me-4">
                                 <div class="card-body m-3">
-                                    <div class="bg-label-primary rounded-3 text-center">
-                                        <img class="img-fluid" src="../../assets/img/illustrations/girl-with-laptop.png" alt="Card girl image" width="150" />
+                                    <div class="ns-bg-blue rounded-3 text-center">
+                                        <img class="img-fluid ns-bg-blue pt-2" src="../../assets/img/illustrations/girl-with-laptop.png" alt="Card girl image" width="150" />
                                     </div>
-                                    <h4 class="mb-0 mt-2">Timelapse</h4>
-                                    <a href="javascript:void(0);" class="btn btn-primary mt-2">Veja em tela cheia</a>
+                                    <h3 class="mb-0 mt-2">Timelapse</h3>
+                                    <a class="btn btn-primary mt-2">Veja em tela cheia</a>
                                 </div>
                             </div>
                         </div>
@@ -277,16 +279,43 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
         <div class="ns-second-page row m-0 p-0">
-            <div class="ns-first-page container-fluid">
-                <h3 class="py-3 mb-4">
+            <div class="ns-second-page container-fluid">
+                <h2 class="py-3 mb-4">
                     <span class="text-muted fw-light">Acompanhamento de projetos /</span> Dashboard
-                </h3>
+                </h2>
                 <div class="ns-content row mt-4 ms-2">
                     <div class="ns-left-ctn col-7">
-
                         <div class="ns-left-top-ctn planejamento-de-obra row">
 
                             <div class="ns-plan-obra col-8">
@@ -297,13 +326,13 @@
                                         <small class="text-center">Dias planejados</small>
                                     </div>
                                     <div class="col-4 mt-4">
-                                        <h3 class="m-0 text-dark text-center">25<i class="px-2 ti ti-circle-filled text-success mb-2"></i></h3>
+                                        <h3 class="m-0 text-dark text-center">25<i class="px-2 ti ti-circle-filled ns-text-blue mb-2"></i></h3>
                                         <small class="text-center">Dias remanescentes</small>
                                     </div>
                                     <div class="col-10 my-3 mt-5">
                                         <div class="progress ms-5 mb-3 mt-3 ns-progress-bar" style="height:40px;">
                                             <div class="progress-bar bg-dark" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                            <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar ns-bg-blue" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                         <hr class="mb-0 ms-5 mt-0">
                                         <span class="d-inline text-start small" style="margin-left: 7%">22 may</span>
@@ -457,12 +486,12 @@
                                 <div class="card">
                                     <div class="card-header d-flex justify-content-between">
                                         <div class="card-title mb-0">
-                                            <h5 class="m-0 me-2">Lista mestra</h5>
+                                            <h4 class="m-0 me-2">Lista mestra</h4>
                                         </div>
                                     </div>
                                     <div class="card-body">
                                         <div>
-                                            <h4 class="card-title mb-2 text-start">45</h4>
+                                            <h3 class="card-title mb-2 text-start">45</h3>
                                         </div>
                                         <div class="row">
                                             <div class="col-5">
@@ -470,7 +499,7 @@
                                                     <span class="badge bg-label-info p-1 rounded"><i class="ti ti-clock-exclamation ti-xs"></i></span>
                                                     <p class="mb-0">Em aprovação</p>
                                                 </div>
-                                                <h5 class="mb-0 pt-1 text-nowrap">62.2%</h5>
+                                                <h4 class="mb-0 pt-1 text-nowrap">62.2%</h4>
                                                 <small class="text-muted">6,440</small>
                                             </div>
                                             <div class="col-2">
@@ -485,7 +514,7 @@
                                                     <p class="mb-0">Aprovados</p>
                                                     <span class="badge bg-label-primary p-1 rounded"><i class="ti ti-clock-check ti-xs"></i></span>
                                                 </div>
-                                                <h5 class="mb-0 pt-1 text-nowrap ms-lg-n3 ms-xl-0">25.5%</h5>
+                                                <h4 class="mb-0 pt-1 text-nowrap ms-lg-n3 ms-xl-0">25.5%</h4>
                                                 <small class="text-muted">12,749</small>
                                             </div>
                                         </div>
@@ -503,7 +532,7 @@
 
                                 <div class="card-header d-flex justify-content-between">
                                     <div class="card-title mb-0">
-                                        <h5 class="m-0 me-2">Aprovações</h5>
+                                        <h4 class="m-0 me-2">Aprovações</h4>
                                     </div>
                                 </div>
                                 <div class="card-body">
@@ -551,7 +580,7 @@
                                 <div class="card">
                                     <div class="card-header d-flex justify-content-between">
                                         <div class="card-title mb-0">
-                                            <h5 class="m-0 me-2">Atividades</h5>
+                                            <h4 class="m-0 me-2">Atividades</h4>
                                         </div>
                                     </div>
                                     <div class="card-body">
@@ -561,12 +590,12 @@
                                         <div class="row d-flex justify-content-between mt-4">
                                             <div class="col-5 card">
                                                 <span class="avatar-initial rounded"><i class="ti ti-clock ti-sm"></i></span>
-                                                <h5 class="ms-1 mb-0 mt-1">42</h5>
+                                                <h4 class="ms-1 mb-0 mt-1">42</h4>
                                                 <p class="mb-1">Planejadas</p>
                                             </div>
                                             <div class="col-5 card">
                                                 <span class="avatar-initial rounded"><i class="ti ti-alert-octagon ti-sm"></i></span>
-                                                <h4 class="ms-1 mb-0">42</h4>
+                                                <h3 class="ms-1 mb-0">42</h3>
                                                 <p class="mb-1">Executadas</p>
                                             </div>
                                         </div>
@@ -577,7 +606,7 @@
                                 <div class="card">
                                     <div class="card-header d-flex justify-content-between">
                                         <div class="card-title mb-0">
-                                            <h5 class="m-0 me-2">Histórico de atividades</h5>
+                                            <h4 class="m-0 me-2">Histórico de atividades</h4>
                                         </div>
                                     </div>
                                     <div class="card-body pb-0">
@@ -592,7 +621,7 @@
                                 <div class="card">
                                     <div class="card-header pb-0 d-flex justify-content-between">
                                         <div class="card-title mb-0">
-                                            <h5 class="mb-0">Análise técnica de projetos</h5>
+                                            <h4 class="mb-0">Análise técnica de projetos</h4>
                                         </div>
                                         <div class="dropdown">
                                             <button class="btn p-0" type="button" id="supportTrackerMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -644,7 +673,6 @@
                     </div>
                 </div>
             </div>
-
         </div>
 </body>
 
