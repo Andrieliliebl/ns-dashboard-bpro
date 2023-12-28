@@ -65,54 +65,49 @@
                 </h3>
             </section>
 
-            <section class="ns-container-esquerda col-12 col-lg-6">
+            <section class="ns-container-esquerda col-12 col-lg-7">
 
                 <div class="ns-planejamento-obra">
 
                     <div class="row">
-                        <div>
-                            <h4 class="card-title ns-card-title">Planejamento de obra</h4>
-                        </div>
-                        <div class="col-12 col-lg-8">
-                            <div class="row mt-3">
+                        <div class="col-12 col-lg-7">
+                            <h4>Planejamento de obra</h4>
+                            <div class="row">
+                                <div class="col-4 mt-3 text-center">
+                                    <h4 class="m-0 text-dark">75<i class="px-2 ti ti-circle-filled text-dark mb-2"></i></h4>
+                                    <small class="text-center ms-4">Dias planejados</small>
+                                </div>
                                 <div class="col-4 mt-3">
-                                    <h4 class="m-0 text-dark">75<i class="px-2 ti ti-circle-filled ns-text-blue text-dark mb-2"></i></h4>
-                                    <small>Dias planejados</small>
+                                    <h4 class="m-0 text-dark text-center">25<i class="px-2 ti ti-circle-filled ns-text-blue mb-2"></i></h4>
+                                    <small class="text-center">Dias remanescentes</small>
                                 </div>
-                                <div class="col-6 mt-3">
-                                    <h4 class="m-0 text-dark">75<i class="px-2 ti ti-circle-filled ns-text-green text-dark mb-2"></i></h4>
-                                    <small>Dias Remanescentes</small>
-                                </div>
-                                <div class="barra-progresso rounded-0 col-10 my-3 mt-3">
-                                    <div class="progress ns-no-border my-4" style="height: 46px;">
-                                        <div class="progress-bar fw-medium text-start rounded-0 ns-bg-blue px-3" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                        <div class="progress-bar fw-medium text-start rounded-0 ns-bg-green px-3" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <hr class="p-0 m-0">
-                                    <div class="d-none d-sm-flex vehicles-progress-labels mb-4">
-                                        <div class="text-start" style="width: 25%;">01 jan</div>
-                                        <div class="text-end" style="width: 50%;">15 jan</div>
-                                        <div class="text-end" style="width: 25%;">31 jan</div>
+                                <div class="col-10 my-3 mt-3">
+                                    <div class="progress ms-5 mb-3 mt-3 ns-progress-bar" style="height:40px;">
+                                        <div class="progress-bar bg-dark" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar ns-bg-blue" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-lg-4 pe-4 mt-3">
-                            <div>
-                                <p class="card-title mb-0">% Realizada</p>
-                            </div>
-                            <div class="card-body mt-3 me-5">
-                                <canvas id="doughnutChart" class="chartjs mb-4" data-height="300"></canvas>
+                        <div class="col-12 col-lg-5">
+                            <div class="row">
+                                <h4 class="text-center">% Realizada</h4>
+                                <div class="p-0 m-0">
+                                    <div id="deliveryExceptionsChart"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
+
+
                 </div>
 
+
                 <div class="ns-desempenho-disciplina">
-                    <div class="row mt-3">
+                    <div class="row mt-4">
                         <div class="card mb-5 col-12">
                             <div class="card-datatable table-responsive">
-                                <h4 class=" card-title ns-card-title">Desempenho por disciplina</h4>
+                                <h4 class="">Desempenho por disciplina</h4>
                                 <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
                                     <table class="datatables-projects table border-top dataTable no-footer dtr-column" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info" style="width: 922px;">
                                         <thead style="text-align:center !important;">
@@ -238,23 +233,6 @@
                 </div>
             </section>
 
-            <section class="ns-container-direita col-12 col-lg-6">
-                <div class="ns-produtividade">
-                    <div class="ns-produtividade row card flex-row mx-3">
-                        <div>
-                            <h4 class="card-title ns-card-title">Produtividade</h4>
-                        </div>
-                        <div class="card-body py-0 pb-2">
-                            <div>
-                                <canvas id="lineChart" class="chartjs" data-height="255"></canvas>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </section>
-
-
 
 
 
@@ -268,8 +246,13 @@
 
 
     <!--
+            <div class="ns-container-esquerda ">
 
+                
+               
+            </div>
 
+            <div class="ns-container-direita">
 
                 <section class="ns-acompanhamento-visual">
                     <div class="ns-acomp-visual row card flex-row m-3">
@@ -312,7 +295,24 @@
                     </div>
                 </section>
 
-               
+                <section class="ns-produtividade">
+                    <div class="ns-right-ctn col-12 col-md-5">
+
+                        <div class="ns-produtividade row card flex-row mx-3">
+                            <div>
+                                <h4 class="card-title">Produtividade</h4>
+                            </div>
+                            <div class="card-body py-0 pb-2">
+                                <div>
+                                    <canvas id="lineChart" class="chartjs" data-height="255"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </section>
 
 
         <div class="ns-second-page row m-0 p-0">
@@ -320,18 +320,18 @@
                 <h2 class="py-3 mb-4">
                     <span class="text-muted fw-light">Acompanhamento de projetos /</span> Dashboard
                 </h2>
-                <div class="ns-content row mt-3 ms-2">
+                <div class="ns-content row mt-4 ms-2">
                     <div class="ns-left-ctn col-7">
                         <div class="ns-left-top-ctn planejamento-de-obra row">
 
                             <div class="ns-plan-obra col-8">
                                 <h4 class="">Planejamento de projetos</h4>
-                                <div class="row mt-3">
-                                    <div class="col-4 mt-3">
+                                <div class="row mt-4">
+                                    <div class="col-4 mt-4">
                                         <h4 class="m-0 text-dark text-center">75<i class="px-2 ti ti-circle-filled text-dark mb-2"></i></h4>
                                         <small class="text-center">Dias planejados</small>
                                     </div>
-                                    <div class="col-4 mt-3">
+                                    <div class="col-4 mt-4">
                                         <h4 class="m-0 text-dark text-center">25<i class="px-2 ti ti-circle-filled ns-text-blue mb-2"></i></h4>
                                         <small class="text-center">Dias remanescentes</small>
                                     </div>
@@ -358,7 +358,7 @@
                             </div>
                         </div>
 
-                        <div class="ns-left-bottom-ctn ns-desempenho-disciplina row mt-3">
+                        <div class="ns-left-bottom-ctn ns-desempenho-disciplina row mt-4">
                             <div class="card mb-5">
                                 <div class="card-datatable table-responsive">
                                     <h4 class="">Desempenho por disciplina</h4>
@@ -524,7 +524,7 @@
                                                 <small class="text-muted">12,749</small>
                                             </div>
                                         </div>
-                                        <div class="d-flex align-items-center mt-3">
+                                        <div class="d-flex align-items-center mt-4">
                                             <div class="progress w-100" style="height: 8px;">
                                                 <div class="progress-bar bg-info" style="width: 70%" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                                                 <div class="progress-bar bg-primary" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
@@ -593,7 +593,7 @@
                                         <div class="row">
                                             <div id="expensesChart"></div>
                                         </div>
-                                        <div class="row d-flex justify-content-between mt-3">
+                                        <div class="row d-flex justify-content-between mt-4">
                                             <div class="col-5 card">
                                                 <span class="avatar-initial rounded"><i class="ti ti-clock ti-sm"></i></span>
                                                 <h4 class="ms-1 mb-0 mt-1">42</h4>

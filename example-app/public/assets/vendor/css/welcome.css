@@ -1,45 +1,53 @@
 * {
-    box-sizing: border-box!important;
+    box-sizing: border-box !important;
 }
 
-.ns-full-body {
-    padding: 3rem!important;
-}
-
-h3 {
-    padding-top: 1rem;
-}
-
-h3 {
-    padding-top: 1rem;
+.ns-first-page {
+    margin-top: 12vh !important;
 }
 
 .ns-text-pink {
-    color: #ee4266!important;
+    color: #ee4266 !important;
 }
 
 .ns-text-yellow {
-    color: #ffd23f!important;
+    color: #ffd23f !important;
 }
+
 .ns-text-blue {
-    color: #01b9e9!important;
+    color: #01b9e9 !important;
 }
 
 .ns-text-green {
-    color: #0ead69!important;
+    color: #0ead69 !important;
 }
 
 .ns-bg-pink {
-    background-color: #ee4266!important;
+    background-color: #ee4266 !important;
 }
 
 .ns-bg-yellow {
-    background-color: #ffd23f!important;
+    background-color: #ffd23f !important;
 }
+
 .ns-bg-blue {
-    background: #01b9e9!important;
+    background: #01b9e9 !important;
 }
 
 .ns-bg-green {
-    background-color: #0ead69!important;
+    background-color: #0ead69 !important;
+}
+
+.ns-bg-white {
+    background-color: white !important;
+}
+
+
+.ns-no-border {
+    border-radius: 0% !important;
+    border-style: none !important;
+}
+
+.ns-card-title {
+    padding-top: 1rem;
 }
