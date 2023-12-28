@@ -1,0 +1,64 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "disciplina": "Arquitetura",
+      "porcentagemCompleta": 75,
+      "dataInicio": "22-05-22",
+      "dataFim": "22-05-23",
+      "totalDias": 221,
+      "diasPlanejados": 176,
+      "diasRemanescentes": 45
+    },
+    {
+      "id": 1,
+      "disciplina": "Hidrossanitario",
+      "porcentagemCompleta": 75,
+      "dataInicio": "22-05-22",
+      "dataFim": "28-05-23",
+      "totalDias": 222,
+      "diasPlanejados": 176,
+      "diasRemanescentes": 46
+    },
+    {
+      "id": 1,
+      "disciplina": "Elétrica",
+      "porcentagemCompleta": 75,
+      "dataInicio": "22-05-22",
+      "dataFim": "15-11-22",
+      "totalDias": 127,
+      "diasPlanejados": 127,
+      "diasRemanescentes": 0
+    },
+    {
+      "id": 1,
+      "disciplina": "HVAC",
+      "porcentagemCompleta": 75,
+      "dataInicio": "22-05-22",
+      "dataFim": "09-11-22",
+      "totalDias": 123,
+      "diasPlanejados": 123,
+      "diasRemanescentes": 0
+    },
+    {
+      "id": 1,
+      "disciplina": "PPCI",
+      "porcentagemCompleta": 75,
+      "dataInicio": "22-05-22",
+      "dataFim": "09-11-22",
+      "totalDias": 221,
+      "diasPlanejados": 176,
+      "diasRemanescentes": 45
+    },
+    {
+      "id": 1,
+      "disciplina": "Estrutural",
+      "porcentagemCompleta": 75,
+      "dataInicio": "22-05-22",
+      "dataFim": "09-11-22",
+      "totalDias": 123,
+      "diasPlanejados": 123,
+      "diasRemanescentes": 53
+    }
+  ]
+}
