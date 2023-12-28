@@ -9,7 +9,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="{{ asset('assets/vendor/fonts/tabler-icons.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendor/fonts/fontawesome.css') }}" />
@@ -21,11 +23,16 @@
     <link rel="stylesheet" href="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendor/libs/typeahead-js/typeahead.css') }}" />
 
+    <link rel="stylesheet" href="{{ asset('assets/vendor/css/rtl/core.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/vendor/css/rtl/theme-default.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/vendor/css/menu.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/vendor/css/welcome.css') }}" />
+
     <link rel="stylesheet" href="{{asset('assets/vendor/libs/apex-charts/apex-charts.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/vendor/libs/datatables-bs5/datatables.bootstrap5.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/vendor/libs/datatables-responsive-bs5/responsive.bootstrap5.css')}}" />
     <link rel="stylesheet" href="{{asset('assets/vendor/css/pages/app-logistics-dashboard.css')}}" />
-
+    
     <script src="{{ asset('assets/vendor/libs/jquery/jquery.js') }}"></script>
     <script src="{{ asset('assets/vendor/libs/popper/popper.js') }}"></script>
     <script src="{{ asset('assets/vendor/js/bootstrap.js') }}"></script>
@@ -38,18 +45,13 @@
     <script src="{{asset('assets/vendor/libs/datatables-bs5/datatables-bootstrap5.js')}}"></script>
     <script src="{{asset('assets/vendor/libs/chartjs/chartjs.js')}}"></script>
     <script src="{{asset('assets/js/config.js')}}"></script>
-    <script src="{{asset('assets/js/app-logistics-dashboard.js')}}"></script>
+    <!-- <script src="{{asset('assets/js/app-logistics-dashboard.js')}}"></script> -->
     <script src="{{asset('assets/js/app-ecommerce-dashboard.js')}}"></script>
     <script src="{{asset('assets/js/app-academy-dashboard.js')}}"></script>
     <script src="{{asset('assets/js/charts-chartjs.js')}}"></script>
     <script src="{{asset('assets/js/cards-analytics.js')}}"></script>
-    <link rel="stylesheet" href="{{ asset('assets/vendor/css/rtl/core.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/vendor/css/rtl/theme-default.css') }}" />
-    <link src="{{ asset('example-app\public\css\welcome.css') }}">
-    <link src="{{ asset('example-app\public\css\menu.css') }}">
-
-    <link rel="stylesheet" href="{{ asset('assets/vendor/css/menu.css') }}" />
-    <link rel="stylesheet" href="{{ asset('assets/vendor/css/welcome.css') }}" />
+    <script src="{{asset('assets/js/welcome.js')}}"></script>
+   
 
 </head>
 
@@ -111,128 +113,27 @@
                 <div class="ns-desempenho-disciplina">
                     <div class="row mt-3">
                         <div class="card mb-5 col-12">
-                            <div class="card-datatable table-responsive">
+                            <div class="card-header">
                                 <h4 class=" card-title ns-card-title">Desempenho por disciplina</h4>
-                                <div id="DataTables_Table_0_wrapper" class="dataTables_wrapper dt-bootstrap5 no-footer">
-                                    <table class="datatables-projects table border-top dataTable no-footer dtr-column" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info" style="width: 922px;">
-                                        <thead style="text-align:center !important;">
-                                            <tr>
-                                                <th class="control sorting_disabled dtr-hidden" rowspan="1" colspan="1" style="width: 0px; display: none;" aria-label=""></th>
-                                                <th class="sorting_disabled dt-checkboxes-cell dt-checkboxes-select-all" rowspan="1" colspan="1" style="width: 18px;" data-col="1" aria-label=""><input type="checkbox" class="form-check-input"></th>
-                                                <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="text-align:center !important;">Disciplina</th>
-                                                <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Leader: activate to sort column ascending" style="text-align:center !important;">% completa</th>
-                                                <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="text-align:center !important;">Data início | fim</th>
-                                                <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="text-align:center !important;">Dias totais</th>
-                                                <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="text-align:center !important;">Dias Planejados</th>
-                                                <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="text-align:center !important;">Dias remanescentes</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr class="even">
-                                                <td class="  control" tabindex="0" style="display: none;"></td>
-                                                <td class="  dt-checkboxes-cell"><input type="checkbox" class="dt-checkboxes form-check-input"></td>
-                                                <td>Arquitetura</td>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="progress w-100 me-3" style="height: 6px;">
-                                                            <div class="progress-bar" style="width: 45%" aria-valuenow="45%" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div><span>45%</span>
-                                                    </div>
-                                                </td>
-                                                <td>Owen</td>
-                                                <td>Owen</td>
-                                                <td>Owen</td>
-                                                <td>Owen</td>
-                                            </tr>
-                                            <tr class="even">
-                                                <td class="  control" tabindex="0" style="display: none;"></td>
-                                                <td class="  dt-checkboxes-cell"><input type="checkbox" class="dt-checkboxes form-check-input"></td>
-                                                <td>Hidrossanitário</td>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="progress w-100 me-3" style="height: 6px;">
-                                                            <div class="progress-bar" style="width: 45%" aria-valuenow="45%" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div><span>45%</span>
-                                                    </div>
-                                                </td>
-                                                <td>Owen</td>
-                                                <td>Owen</td>
-                                                <td>Owen</td>
-                                                <td>Owen</td>
-
-
-                                            </tr>
-                                            <tr class="even">
-                                                <td class="  control" tabindex="0" style="display: none;"></td>
-                                                <td class="  dt-checkboxes-cell"><input type="checkbox" class="dt-checkboxes form-check-input"></td>
-                                                <td>Elétrica</td>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="progress w-100 me-3" style="height: 6px;">
-                                                            <div class="progress-bar" style="width: 45%" aria-valuenow="45%" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div><span>45%</span>
-                                                    </div>
-                                                </td>
-                                                <td>Owen</td>
-                                                <td>Owen</td>
-                                                <td>Owen</td>
-                                                <td>Owen</td>
-
-                                            </tr>
-                                            <tr class="even">
-                                                <td class="  control" tabindex="0" style="display: none;"></td>
-                                                <td class="  dt-checkboxes-cell"><input type="checkbox" class="dt-checkboxes form-check-input"></td>
-                                                <td>HVAC</td>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="progress w-100 me-3" style="height: 6px;">
-                                                            <div class="progress-bar" style="width: 45%" aria-valuenow="45%" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div><span>45%</span>
-                                                    </div>
-                                                </td>
-                                                <td>Owen</td>
-                                                <td>Owen</td>
-                                                <td>Owen</td>
-                                                <td>Owen</td>
-
-                                            </tr>
-                                            <tr class="even">
-                                                <td class="  control" tabindex="0" style="display: none;"></td>
-                                                <td class="  dt-checkboxes-cell"><input type="checkbox" class="dt-checkboxes form-check-input"></td>
-                                                <td>PPCI</td>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="progress w-100 me-3" style="height: 6px;">
-                                                            <div class="progress-bar" style="width: 45%" aria-valuenow="45%" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div><span>45%</span>
-                                                    </div>
-                                                </td>
-                                                <td>Owen</td>
-                                                <td>Owen</td>
-                                                <td>Owen</td>
-                                                <td>Owen</td>
-
-                                            </tr>
-                                            <tr class="even">
-                                                <td class="control" tabindex="0" style="display: none;"></td>
-                                                <td class="dt-checkboxes-cell"><input type="checkbox" class="dt-checkboxes form-check-input"></td>
-                                                <td>Estrutural</td>
-                                                <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="progress w-100 me-3" style="height: 6px;">
-                                                            <div class="progress-bar" style="width: 45%" aria-valuenow="45%" aria-valuemin="0" aria-valuemax="100"></div>
-                                                        </div><span>45%</span>
-                                                    </div>
-                                                </td>
-                                                <td>Owen</td>
-                                                <td>Owen</td>
-                                                <td>Owen</td>
-                                                <td>Owen</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
                             </div>
+                            <div class="card-datatable table-responsive">
+                                <table class="dt-performance-by-discipline table">
+                                    <thead class="border-top">
+                                        <tr>
+                                            <th></th>
+                                            <th></th>
+                                            <th>DISCIPLINA</th>
+                                            <th class="w-20">% COMPLETA</th>
+                                            <th>DATA INÍCIO</th>
+                                            <th>DATA FIM</th>
+                                            <th>DIAS TOTAIS</th>
+                                            <th>DIAS PLANEJADOS</th>
+                                            <th>REMANESCENTES</th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -277,22 +178,26 @@
                             <h4 class="card-title ">Acompanhamento visual</h4>
                         </div>
                         <div class="ns-pre-vis col-3">
-                            <div class="card icon-card cursor-pointer text-center mb-2 mx-2 border border-1 border-primary" style="border-style: dashed !important;">
+                            <div class="card icon-card cursor-pointer text-center mb-2 mx-2 border border-1 border-primary"
+                                style="border-style: dashed !important;">
                                 <div class="card-body">
                                     <p class="icon-name text-capitalize text-truncate mb-0">Drone</p>
                                 </div>
                             </div>
-                            <div class="card icon-card cursor-pointer text-center mb-2 mx-2 border border-1 border-primary" style="border-style: dashed !important;">
+                            <div class="card icon-card cursor-pointer text-center mb-2 mx-2 border border-1 border-primary"
+                                style="border-style: dashed !important;">
                                 <div class="card-body">
                                     <p class="icon-name text-capitalize text-truncate mb-0">360°</p>
                                 </div>
                             </div>
-                            <div class="card icon-card cursor-pointer text-center mb-2 mx-2 border border-1 border-primary" style="border-style: dashed !important;">
+                            <div class="card icon-card cursor-pointer text-center mb-2 mx-2 border border-1 border-primary"
+                                style="border-style: dashed !important;">
                                 <div class="card-body">
                                     <p class="icon-name text-capitalize text-truncate mb-0">4D Real</p>
                                 </div>
                             </div>
-                            <div class="card icon-card cursor-pointer text-center mb-2 mx-2 border border-1 border-primary" style="border-style: dashed !important;">
+                            <div class="card icon-card cursor-pointer text-center mb-2 mx-2 border border-1 border-primary"
+                                style="border-style: dashed !important;">
                                 <div class="card-body">
                                     <p class="icon-name text-capitalize text-truncate mb-0">4D Planejado</p>
                                 </div>
@@ -302,7 +207,9 @@
                             <div class="col-12 me-4">
                                 <div class="card-body m-3">
                                     <div class="ns-bg-blue rounded-3 text-center">
-                                        <img class="img-fluid ns-bg-blue pt-2" src="../../assets/img/illustrations/girl-with-laptop.png" alt="Card girl image" width="150" />
+                                        <img class="img-fluid ns-bg-blue pt-2"
+                                            src="../../assets/img/illustrations/girl-with-laptop.png"
+                                            alt="Card girl image" width="150" />
                                     </div>
                                     <h4 class="mb-0 mt-2">Timelapse</h4>
                                     <a class="btn btn-primary mt-2">Veja em tela cheia</a>
@@ -337,8 +244,10 @@
                                     </div>
                                     <div class="col-10 my-3 mt-5">
                                         <div class="progress ms-5 mb-3 mt-3 ns-progress-bar" style="height:40px;">
-                                            <div class="progress-bar bg-dark" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
-                                            <div class="progress-bar ns-bg-blue" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar bg-dark" role="progressbar" style="width: 75%"
+                                                aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+                                            <div class="progress-bar ns-bg-blue" role="progressbar" style="width: 25%"
+                                                aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                         <hr class="mb-0 ms-5 mt-0">
                                         <span class="d-inline text-start small" style="margin-left: 7%">22 may</span>
@@ -366,25 +275,46 @@
                                         <table class="datatables-projects table border-top dataTable no-footer dtr-column" id="DataTables_Table_0" aria-describedby="DataTables_Table_0_info" style="width: 922px;">
                                             <thead style="text-align:center !important;">
                                                 <tr>
-                                                    <th class="control sorting_disabled dtr-hidden" rowspan="1" colspan="1" style="width: 0px; display: none;" aria-label=""></th>
-                                                    <th class="sorting_disabled dt-checkboxes-cell dt-checkboxes-select-all" rowspan="1" colspan="1" style="width: 18px;" data-col="1" aria-label=""><input type="checkbox" class="form-check-input"></th>
-                                                    <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="text-align:center !important;">Disciplina</th>
-                                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0" rowspan="1" colspan="1" aria-label="Leader: activate to sort column ascending" style="text-align:center !important;">% completa</th>
-                                                    <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="text-align:center !important;">Data início | fim</th>
-                                                    <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="text-align:center !important;">Dias totais</th>
-                                                    <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="text-align:center !important;">Dias Planejados</th>
-                                                    <th class="sorting_disabled" rowspan="1" colspan="1" aria-label="Actions" style="text-align:center !important;">Dias remanescentes</th>
+                                                    <th class="control sorting_disabled dtr-hidden" rowspan="1"
+                                                        colspan="1" style="width: 0px; display: none;" aria-label="">
+                                                    </th>
+                                                    <th class="sorting_disabled dt-checkboxes-cell dt-checkboxes-select-all"
+                                                        rowspan="1" colspan="1" style="width: 18px;" data-col="1"
+                                                        aria-label=""><input type="checkbox" class="form-check-input">
+                                                    </th>
+                                                    <th class="sorting_disabled" rowspan="1" colspan="1"
+                                                        aria-label="Actions" style="text-align:center !important;">
+                                                        Disciplina</th>
+                                                    <th class="sorting" tabindex="0" aria-controls="DataTables_Table_0"
+                                                        rowspan="1" colspan="1"
+                                                        aria-label="Leader: activate to sort column ascending"
+                                                        style="text-align:center !important;">% completa</th>
+                                                    <th class="sorting_disabled" rowspan="1" colspan="1"
+                                                        aria-label="Actions" style="text-align:center !important;">Data
+                                                        início | fim</th>
+                                                    <th class="sorting_disabled" rowspan="1" colspan="1"
+                                                        aria-label="Actions" style="text-align:center !important;">Dias
+                                                        totais</th>
+                                                    <th class="sorting_disabled" rowspan="1" colspan="1"
+                                                        aria-label="Actions" style="text-align:center !important;">Dias
+                                                        Planejados</th>
+                                                    <th class="sorting_disabled" rowspan="1" colspan="1"
+                                                        aria-label="Actions" style="text-align:center !important;">Dias
+                                                        remanescentes</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr class="even">
                                                     <td class="  control" tabindex="0" style="display: none;"></td>
-                                                    <td class="  dt-checkboxes-cell"><input type="checkbox" class="dt-checkboxes form-check-input"></td>
+                                                    <td class="  dt-checkboxes-cell"><input type="checkbox"
+                                                            class="dt-checkboxes form-check-input"></td>
                                                     <td>Arquitetura</td>
                                                     <td>
                                                         <div class="d-flex align-items-center">
                                                             <div class="progress w-100 me-3" style="height: 6px;">
-                                                                <div class="progress-bar" style="width: 45%" aria-valuenow="45%" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar" style="width: 45%"
+                                                                    aria-valuenow="45%" aria-valuemin="0"
+                                                                    aria-valuemax="100"></div>
                                                             </div><span>45%</span>
                                                         </div>
                                                     </td>
@@ -395,12 +325,15 @@
                                                 </tr>
                                                 <tr class="even">
                                                     <td class="  control" tabindex="0" style="display: none;"></td>
-                                                    <td class="  dt-checkboxes-cell"><input type="checkbox" class="dt-checkboxes form-check-input"></td>
+                                                    <td class="  dt-checkboxes-cell"><input type="checkbox"
+                                                            class="dt-checkboxes form-check-input"></td>
                                                     <td>Hidrossanitário</td>
                                                     <td>
                                                         <div class="d-flex align-items-center">
                                                             <div class="progress w-100 me-3" style="height: 6px;">
-                                                                <div class="progress-bar" style="width: 45%" aria-valuenow="45%" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar" style="width: 45%"
+                                                                    aria-valuenow="45%" aria-valuemin="0"
+                                                                    aria-valuemax="100"></div>
                                                             </div><span>45%</span>
                                                         </div>
                                                     </td>
@@ -413,12 +346,15 @@
                                                 </tr>
                                                 <tr class="even">
                                                     <td class="  control" tabindex="0" style="display: none;"></td>
-                                                    <td class="  dt-checkboxes-cell"><input type="checkbox" class="dt-checkboxes form-check-input"></td>
+                                                    <td class="  dt-checkboxes-cell"><input type="checkbox"
+                                                            class="dt-checkboxes form-check-input"></td>
                                                     <td>Elétrica</td>
                                                     <td>
                                                         <div class="d-flex align-items-center">
                                                             <div class="progress w-100 me-3" style="height: 6px;">
-                                                                <div class="progress-bar" style="width: 45%" aria-valuenow="45%" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar" style="width: 45%"
+                                                                    aria-valuenow="45%" aria-valuemin="0"
+                                                                    aria-valuemax="100"></div>
                                                             </div><span>45%</span>
                                                         </div>
                                                     </td>
@@ -430,12 +366,15 @@
                                                 </tr>
                                                 <tr class="even">
                                                     <td class="  control" tabindex="0" style="display: none;"></td>
-                                                    <td class="  dt-checkboxes-cell"><input type="checkbox" class="dt-checkboxes form-check-input"></td>
+                                                    <td class="  dt-checkboxes-cell"><input type="checkbox"
+                                                            class="dt-checkboxes form-check-input"></td>
                                                     <td>HVAC</td>
                                                     <td>
                                                         <div class="d-flex align-items-center">
                                                             <div class="progress w-100 me-3" style="height: 6px;">
-                                                                <div class="progress-bar" style="width: 45%" aria-valuenow="45%" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar" style="width: 45%"
+                                                                    aria-valuenow="45%" aria-valuemin="0"
+                                                                    aria-valuemax="100"></div>
                                                             </div><span>45%</span>
                                                         </div>
                                                     </td>
@@ -447,12 +386,15 @@
                                                 </tr>
                                                 <tr class="even">
                                                     <td class="  control" tabindex="0" style="display: none;"></td>
-                                                    <td class="  dt-checkboxes-cell"><input type="checkbox" class="dt-checkboxes form-check-input"></td>
+                                                    <td class="  dt-checkboxes-cell"><input type="checkbox"
+                                                            class="dt-checkboxes form-check-input"></td>
                                                     <td>PPCI</td>
                                                     <td>
                                                         <div class="d-flex align-items-center">
                                                             <div class="progress w-100 me-3" style="height: 6px;">
-                                                                <div class="progress-bar" style="width: 45%" aria-valuenow="45%" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar" style="width: 45%"
+                                                                    aria-valuenow="45%" aria-valuemin="0"
+                                                                    aria-valuemax="100"></div>
                                                             </div><span>45%</span>
                                                         </div>
                                                     </td>
@@ -464,12 +406,15 @@
                                                 </tr>
                                                 <tr class="even">
                                                     <td class="control" tabindex="0" style="display: none;"></td>
-                                                    <td class="dt-checkboxes-cell"><input type="checkbox" class="dt-checkboxes form-check-input"></td>
+                                                    <td class="dt-checkboxes-cell"><input type="checkbox"
+                                                            class="dt-checkboxes form-check-input"></td>
                                                     <td>Estrutural</td>
                                                     <td>
                                                         <div class="d-flex align-items-center">
                                                             <div class="progress w-100 me-3" style="height: 6px;">
-                                                                <div class="progress-bar" style="width: 45%" aria-valuenow="45%" aria-valuemin="0" aria-valuemax="100"></div>
+                                                                <div class="progress-bar" style="width: 45%"
+                                                                    aria-valuenow="45%" aria-valuemin="0"
+                                                                    aria-valuemax="100"></div>
                                                             </div><span>45%</span>
                                                         </div>
                                                     </td>
@@ -502,7 +447,8 @@
                                         <div class="row">
                                             <div class="col-5">
                                                 <div class="d-flex gap-2 align-items-center mb-2">
-                                                    <span class="badge bg-label-info p-1 rounded"><i class="ti ti-clock-exclamation ti-xs"></i></span>
+                                                    <span class="badge bg-label-info p-1 rounded"><i
+                                                            class="ti ti-clock-exclamation ti-xs"></i></span>
                                                     <p class="mb-0">Em aprovação</p>
                                                 </div>
                                                 <h4 class="mb-0 pt-1 text-nowrap">62.2%</h4>
@@ -518,7 +464,8 @@
                                             <div class="col-5 text-end">
                                                 <div class="d-flex gap-2 justify-content-end align-items-center mb-2">
                                                     <p class="mb-0">Aprovados</p>
-                                                    <span class="badge bg-label-primary p-1 rounded"><i class="ti ti-clock-check ti-xs"></i></span>
+                                                    <span class="badge bg-label-primary p-1 rounded"><i
+                                                            class="ti ti-clock-check ti-xs"></i></span>
                                                 </div>
                                                 <h4 class="mb-0 pt-1 text-nowrap ms-lg-n3 ms-xl-0">25.5%</h4>
                                                 <small class="text-muted">12,749</small>
@@ -526,8 +473,11 @@
                                         </div>
                                         <div class="d-flex align-items-center mt-3">
                                             <div class="progress w-100" style="height: 8px;">
-                                                <div class="progress-bar bg-info" style="width: 70%" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                                                <div class="progress-bar bg-primary" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                                                <div class="progress-bar bg-info" style="width: 70%" role="progressbar"
+                                                    aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                                                <div class="progress-bar bg-primary" role="progressbar"
+                                                    style="width: 30%" aria-valuenow="30" aria-valuemin="0"
+                                                    aria-valuemax="100"></div>
                                             </div>
                                         </div>
                                     </div>
@@ -595,7 +545,8 @@
                                         </div>
                                         <div class="row d-flex justify-content-between mt-3">
                                             <div class="col-5 card">
-                                                <span class="avatar-initial rounded"><i class="ti ti-clock ti-sm"></i></span>
+                                                <span class="avatar-initial rounded"><i
+                                                        class="ti ti-clock ti-sm"></i></span>
                                                 <h4 class="ms-1 mb-0 mt-1">42</h4>
                                                 <p class="mb-1">Planejadas</p>
                                             </div>
@@ -630,10 +581,12 @@
                                             <h4 class="mb-0">Análise técnica de projetos</h4>
                                         </div>
                                         <div class="dropdown">
-                                            <button class="btn p-0" type="button" id="supportTrackerMenu" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <button class="btn p-0" type="button" id="supportTrackerMenu"
+                                                data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                 <i class="ti ti-dots-vertical ti-sm text-muted"></i>
                                             </button>
-                                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="supportTrackerMenu">
+                                            <div class="dropdown-menu dropdown-menu-end"
+                                                aria-labelledby="supportTrackerMenu">
                                                 <a class="dropdown-item" href="javascript:void(0);">View More</a>
                                                 <a class="dropdown-item" href="javascript:void(0);">Delete</a>
                                             </div>
@@ -647,21 +600,24 @@
                                             </div>
                                             <ul class="p-0 m-0">
                                                 <li class="d-flex gap-3 align-items-center mb-lg-3 pt-2 pb-1">
-                                                    <div class="badge rounded bg-label-primary p-1"><i class="ti ti-ticket ti-sm"></i></div>
+                                                    <div class="badge rounded bg-label-primary p-1"><i
+                                                            class="ti ti-ticket ti-sm"></i></div>
                                                     <div>
                                                         <h6 class="mb-0 text-nowrap">Criadas</h6>
                                                         <small class="text-muted">100</small>
                                                     </div>
                                                 </li>
                                                 <li class="d-flex gap-3 align-items-center mb-lg-3 pb-1">
-                                                    <div class="badge rounded bg-label-info p-1"><i class="ti ti-circle-check ti-sm"></i></div>
+                                                    <div class="badge rounded bg-label-info p-1"><i
+                                                            class="ti ti-circle-check ti-sm"></i></div>
                                                     <div>
                                                         <h6 class="mb-0 text-nowrap">Aprovadas</h6>
                                                         <small class="text-muted">85</small>
                                                     </div>
                                                 </li>
                                                 <li class="d-flex gap-3 align-items-center pb-1">
-                                                    <div class="badge rounded bg-label-warning p-1"><i class="ti ti-clock ti-sm"></i></div>
+                                                    <div class="badge rounded bg-label-warning p-1"><i
+                                                            class="ti ti-clock ti-sm"></i></div>
                                                     <div>
                                                         <h6 class="mb-0 text-nowrap">Pendentes de revisão</h6>
                                                         <small class="text-muted">15</small>
