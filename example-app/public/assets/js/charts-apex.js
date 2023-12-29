@@ -165,7 +165,7 @@
   const barChartEl = document.querySelector('#barChart'),
     barChartConfig = {
       chart: {
-        height: 400,
+        height: 200,
         type: 'bar',
         stacked: true,
         parentHeightOffset: 0,

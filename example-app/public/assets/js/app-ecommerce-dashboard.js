@@ -38,7 +38,7 @@ $(function () {
   const expensesRadialChartEl = document.querySelector('#expensesChart'),
     expensesRadialChartConfig = {
       chart: {
-        height: 145,
+        height: 240,
         sparkline: {
           enabled: true
         },
@@ -717,7 +717,7 @@ $(function () {
   const reportBarChartEl = document.querySelector('#reportBarChart'),
     reportBarChartConfig = {
       chart: {
-        height: 230,
+        height: 180,
         type: 'bar',
         toolbar: {
           show: false
@@ -726,7 +726,7 @@ $(function () {
       plotOptions: {
         bar: {
           barHeight: '60%',
-          columnWidth: '60%',
+          columnWidth: '40%',
           startingShape: 'rounded',
           endingShape: 'rounded',
           borderRadius: 4,
