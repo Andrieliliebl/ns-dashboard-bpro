@@ -6,52 +6,12 @@
     margin-top: 12vh !important;
 }
 
-.ns-text-pink {
-    color: #ee4266 !important;
-}
-
-.ns-text-yellow {
-    color: #ffd23f !important;
-}
-
-.ns-text-blue {
-    color: #01b9e9 !important;
-}
-
-.ns-text-green {
-    color: #0ead69 !important;
-}
-
-.ns-text-white {
-    color: #fff !important;
-}
-
-.ns-bg-pink {
-    background-color: #ee4266 !important;
-}
-
-.ns-bg-yellow {
-    background-color: #ffd23f !important;
-}
-
-.ns-bg-blue {
-    background: #01b9e9 !important;
-}
-
-.ns-bg-green {
-    background-color: #0ead69 !important;
-}
-
-.ns-bg-white {
-    background-color: white !important;
-}
-
-
 .ns-no-border {
     border-radius: 0% !important;
     border-style: none !important;
 }
 
 .ns-card-title {
-    padding-top: 1rem;
+    padding: 1rem 0 0 1rem;
+    margin: 0 !important;
 }

@@ -1,9 +1,11 @@
+
+// letiable declaration for table "desempenho por disciplina"
+
 $(function () {
-    // Variable declaration for table
-    var dt_dashboard_table = $('.dt-performance-by-discipline');
+    let dt_dashboard_table = $('.dt-performance-by-discipline');
 
     if (dt_dashboard_table.length) {
-        var dt_dashboard = dt_dashboard_table.DataTable({
+        let dt_dashboard = dt_dashboard_table.DataTable({
             ajax: 'assets/json/exemplo-desempenho-por-disciplina.json',
 
             columns: [
@@ -48,9 +50,9 @@ $(function () {
                     targets: 2,
                     responsivePriority: 1,
                     render: function (data, type, full, meta) {
-                        var $disciplina = full['disciplina'];
+                        let $disciplina = full['disciplina'];
                         // Creates full output for row
-                        var $row_output =
+                        let $row_output =
                             '<div class="d-flex flex-column">' +  $disciplina +  '</div>'
                         return $row_output;
                     }
@@ -59,8 +61,8 @@ $(function () {
                     // Porcentagem completa
                     targets: 3,
                     render: function (data, type, full, meta) {
-                        var $progress = full['porcentagemCompleta'];
-                        var $progress_output =
+                        let $progress = full['porcentagemCompleta'];
+                        let $progress_output =
                             '<div class="d-flex align-items-center">' +
                                 '<div class="text-body">' +  $progress + '%</div>' +
                                 '<div div class="progress w-100 ms-3" style="height: 8px;">' +
@@ -77,8 +79,8 @@ $(function () {
                     // Data inicio
                     targets: 4,
                     render: function (data, type, full, meta) {
-                        var $dataInicio = full['dataInicio']
-                        var $row_output = '<div class="text-body">' + $dataInicio + '</div >';
+                        let $dataInicio = full['dataInicio']
+                        let $row_output = '<div class="text-body">' + $dataInicio + '</div >';
                         return $row_output;
                     }
                 },
@@ -86,8 +88,8 @@ $(function () {
                     // Data Fim
                     targets: 5,
                     render: function (data, type, full, meta) {
-                        var $dataFim = full['dataFim']
-                        var $row_output = '<div class="text-body">' + $dataFim + '</div >';
+                        let $dataFim = full['dataFim']
+                        let $row_output = '<div class="text-body">' + $dataFim + '</div >';
                         return $row_output;
                     }
                 },
@@ -95,8 +97,8 @@ $(function () {
                     // Total dias
                     targets: 6,
                     render: function (data, type, full, meta) {
-                        var $totalDias = full['totalDias']
-                        var $row_output = '<div class="text-body">' + $totalDias + '</div >';
+                        let $totalDias = full['totalDias']
+                        let $row_output = '<div class="text-body">' + $totalDias + '</div >';
                         return $row_output;
                     }
                 },
@@ -104,8 +106,8 @@ $(function () {
                     // Total dias
                     targets: 7,
                     render: function (data, type, full, meta) {
-                        var $diasPlanejados = full['diasPlanejados']
-                        var $row_output = '<div class="text-body">' + $diasPlanejados + '</div >';
+                        let $diasPlanejados = full['diasPlanejados']
+                        let $row_output = '<div class="text-body">' + $diasPlanejados + '</div >';
                         return $row_output;
                     }
                 },
@@ -113,8 +115,8 @@ $(function () {
                     // Total dias
                     targets: 8,
                     render: function (data, type, full, meta) {
-                        var $diasRemanescentes = full['diasRemanescentes']
-                        var $row_output = '<div class="text-body">' + $diasRemanescentes + '</div >';
+                        let $diasRemanescentes = full['diasRemanescentes']
+                        let $row_output = '<div class="text-body">' + $diasRemanescentes + '</div >';
                         return $row_output;
                     }
                 }
@@ -126,13 +128,13 @@ $(function () {
                 details: {
                     display: $.fn.dataTable.Responsive.display.modal({
                         header: function (row) {
-                            var data = row.data();
+                            let data = row.data();
                             return 'Details of ' + data['location'];
                         }
                     }),
                     type: 'column',
                     renderer: function (api, rowIdx, columns) {
-                        var data = $.map(columns, function (col, i) {
+                        let data = $.map(columns, function (col, i) {
                             return col.title !== '' // ? Do not show row in modal popup if title is blank (for check box)
                                 ? '<tr data-dt-row="' +
                                 col.rowIndex +
@@ -158,3 +160,120 @@ $(function () {
         $('.dataTables_info').addClass('pt-0');
     }
 });
+
+// End letiable declaration for table "desempenho por disciplina"
+
+ //  start of % realizada chart
+
+ const generatedLeadsChartEl = document.querySelector('#generatedLeadsChart'),
+ generatedLeadsChartConfig = {
+   chart: {
+     height: 150,
+     width: auto,
+     parentHeightOffset: 0,
+     type: 'donut'
+   },
+   labels: ['Electronic', 'Sports'],
+   series: [45, 58],
+   colors: [
+     chartColors.donut.series1,
+     chartColors.donut.series2
+   ],
+   stroke: {
+     width: 0
+   },
+   dataLabels: {
+     enabled: false,
+     formatter: function (val, opt) {
+       return parseInt(val) + '%';
+     }
+   },
+   legend: {
+     show: false
+   },
+   tooltip: {
+     theme: false
+   },
+   grid: {
+     padding: {
+       top: 15,
+       right: -20,
+       left: -20
+     }
+   },
+   states: {
+     hover: {
+       filter: {
+         type: 'none'
+       }
+     }
+   },
+   plotOptions: {
+     pie: {
+       donut: {
+         size: '70%',
+         labels: {
+           show: true,
+           value: {
+             fontSize: '1.375rem',
+             fontFamily: 'Public Sans',
+             color: headingColor,
+             fontWeight: 500,
+             offsetY: -15,
+             formatter: function (val) {
+               return parseInt(val) + '%';
+             }
+           },
+           name: {
+             offsetY: 20,
+             fontFamily: 'Public Sans'
+           },
+           total: {
+             show: true,
+             showAlways: true,
+             color: config.colors.success,
+             fontSize: '.8125rem',
+             label: 'Total',
+             fontFamily: 'Public Sans',
+             formatter: function (w) {
+               return '184';
+             }
+           }
+         }
+       }
+     }
+   },
+   responsive: [
+     {
+       breakpoint: 1025,
+       options: {
+         chart: {
+           height: 172,
+           width: 160
+         }
+       }
+     },
+     {
+       breakpoint: 769,
+       options: {
+         chart: {
+           height: 178
+         }
+       }
+     },
+     {
+       breakpoint: 426,
+       options: {
+         chart: {
+           height: 147
+         }
+       }
+     }
+   ]
+ };
+if (typeof generatedLeadsChartEl !== undefined && generatedLeadsChartEl !== null) {
+ const generatedLeadsChart = new ApexCharts(generatedLeadsChartEl, generatedLeadsChartConfig);
+ generatedLeadsChart.render();
+}
+
+//end of % realizada chart
