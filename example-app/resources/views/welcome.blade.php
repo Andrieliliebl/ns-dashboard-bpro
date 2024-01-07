@@ -53,32 +53,35 @@
 </head>
 
 <body>
-    <section class="ns-menu"> @include('menu')</section>
+    <section class="ns-menu">
+        @include('menu')
+    </section>
 
-    <section class="ns-container-geral text-start m-0 px-3 px-md-5 mt-5">
+    <section class="ns-container-geral text-start mt-5 px-3 px-md-5">
 
-        <section class="ns-first-page m-0 p-0 accordion">
+        <section class="ns-first-page mt-3 accordion">
 
-            <section class="ns-titulo mt-3 accordion-item">
-                <div class="col-12 accordion-header">
+            <section class="ns-titulo accordion-item">
+                <div class="accordion-header">
                     <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
                         <h2><span class="text-muted fw-light">Acompanhamento de obra /</span> Dashboard</h2>
                     </button>
                 </div>
             </section>
+
             <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
                 <div class="row">
-                    <div class="ns-planejamento-obra m-2 col-lg-6 accordion">
-                        <div class="row accordion-item">
+                    <div class="ns-planejamento-obra col-lg-6 accordion card">
+                        <div class="accordion-item">
                             <div class="accordion-header">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
-                                    <h3 class="card-title ns-card-title ">Planejamento de obra</h3>
+                                    <h3 class="card-title ns-card-title">Planejamento de obra</h3>
                                 </button>
                             </div>
                             <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show row">
-                                <div class="col-12 col-lg-8 accordion-body">
+                                <div class="col-12 col-lg-7 accordion-body mt-3">
                                     <div class="row mt-3">
-                                        <div class="col-4 mt-3">
+                                        <div class="col-6 mt-3">
                                             <h3 class="m-0 text-dark">75<i class="px-2 ti ti-circle-filled text-info"></i></h3>
                                             <small>Dias planejados</small>
                                         </div>
@@ -86,7 +89,7 @@
                                             <h3 class="m-0 text-dark">75<i class="px-2 ti ti-circle-filled text-primary"></i></h3>
                                             <small>Dias Remanescentes</small>
                                         </div>
-                                        <div class="barra-progresso rounded-0 col-10 my-3 mt-3">
+                                        <div class="barra-progresso rounded-0 col-12 my-3 mt-3">
                                             <div class="progress ns-no-border my-4" style="height: 30px;">
                                                 <div class="progress-bar fw-medium  text-bg-info text-start rounded-0 px-3" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                                                 <div class="progress-bar fw-medium text-start rounded-0 px-3" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
@@ -100,25 +103,26 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 col-lg-4 mt-3 pb-5">
+                                <div class="col-12 col-lg-5 mt-3">
                                     <div>
-                                        <p class="card-title text-start ps-4">% Realizada</p>
+                                        <p class="card-title text-center">% Realizada</p>
                                     </div>
-                                    <div class="card-body mb-1 p-2">
+                                    <div class="card-body mb-1 ps-5">
                                         <div id="generatedLeadsChart"></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="ns-produtividade m-2 col-lg-5 accordion">
-                        <div class="ns-produtividade row card accordion-item">
+
+                    <div class="ns-produtividade col-lg-6 accordion card">
+                        <div class="accordion-item">
                             <div class="accordion-header">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree">
                                     <h3 class="card-title ns-card-title">Produtividade</h3>
                                 </button>
                             </div>
-                            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show">
+                            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show row">
                                 <div class="card-body py-0 accordion-body">
                                     <div>
                                         <canvas id="lineChart" class="chartjs" data-height="255"></canvas>
@@ -128,42 +132,46 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="ns-desempenho-disciplina col-lg-6 m-2 accordion">
-                        <div class="row card accordion-item">
-                            <div class="accordion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="true" aria-controls="panelsStayOpen-collapseFour">
-                                    <h3 class="card-title ns-card-title">Desempenho por disciplina</h3>
-                            </div>
-                            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse show row">
-                                <div class="card-datatable table-responsive mt-3 accordion-body">
-                                    <table class="dt-performance-by-discipline table" aria-label="tabela de dados por disciplina">
-                                        <thead class="border-top">
-                                            <tr>
-                                                <th></th>
-                                                <th></th>
-                                                <th>DISCIPLINA</th>
-                                                <th class="w-20">% COMPLETA</th>
-                                                <th>DATA INÍCIO</th>
-                                                <th>DATA FIM</th>
-                                                <th>DIAS TOTAIS</th>
-                                                <th>DIAS PLANEJADOS</th>
-                                                <th>REMANESCENTES</th>
-                                            </tr>
-                                        </thead>
-                                    </table>
-                                </div>
+            </div>
+
+            <div class="row mt-3">
+                <div class="ns-desempenho-disciplina col-lg-6 accordion card">
+                    <div class="row accordion-item">
+                        <div class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="true" aria-controls="panelsStayOpen-collapseFour">
+                                <h3 class="card-title ns-card-title">Desempenho por disciplina</h3>
+                        </div>
+                        <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse show row">
+                            <div class="card-datatable table-responsive mt-3 accordion-body">
+                                <table class="dt-performance-by-discipline table" aria-label="tabela de dados por disciplina">
+                                    <thead class="border-top">
+                                        <tr>
+                                            <th></th>
+                                            <th></th>
+                                            <th>DISCIPLINA</th>
+                                            <th class="w-20">% COMPLETA</th>
+                                            <th>DATA INÍCIO</th>
+                                            <th>DATA FIM</th>
+                                            <th>DIAS TOTAIS</th>
+                                            <th>DIAS PLANEJADOS</th>
+                                            <th>REMANESCENTES</th>
+                                        </tr>
+                                    </thead>
+                                </table>
                             </div>
                         </div>
                     </div>
-                    <div class="ns-acompanhamento-visual m-2 col-lg-5 accordion">
-                        <div class="ns-acomp-visual row card flex-row align-items-center justify-content-center accordion-item">
-                            <div class="accordeion-header">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="true" aria-controls="panelsStayOpen-collapseFive">
-                                    <h3 class="card-title ns-card-title ">Acompanhamento visual</h3>
-                                </button>
-                            </div>
-                            <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse show row">
+                </div>
+
+                <div class="ns-acompanhamento-visual col-lg-6 accordion card">
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="true" aria-controls="panelsStayOpen-collapseFive">
+                                <h3 class="card-title ns-card-title">Acompanhamento visual</h3>
+                            </button>
+                        </div>
+                        <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse show row">
+                            <div class="ns-pre-vis col-12 mt-3 p-4 pt-0 accordion-body d-flex justify-content-center">
                                 <div class="ns-pre-vis col-3 mt-3 p-4 pt-0 accordion-body">
                                     <div class="card icon-card cursor-pointer text-center">
                                         <div class="card-body m-0 p-0" style="overflow: hidden;">
@@ -221,6 +229,7 @@
         </section>
 
 
+
         <section class="ns-second-page m-0 p-0 accordion">
             <section class="ns-titulo mt-3 accordion-item">
                 <div class="col-12 accordion-header">
@@ -231,7 +240,7 @@
             </section>
             <div id="panelsStayOpen-collapseSix" class="accordion-collapse collapse show">
                 <div class="row">
-                    <div class="ns-planejamento-projetos col-lg-6 accordion">
+                    <div class="ns-planejamento-projetos col-lg-6 accordion card">
                         <div class="row accordion-item">
                             <div class="accordion-header">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseSeven" aria-expanded="true" aria-controls="panelsStayOpen-collapseSeven">
@@ -274,7 +283,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="ns-lista-mestra col-lg-3 card accordion">
+                    <div class="ns-lista-mestra col-lg-3 card accordion card">
                         <div class="row accordion-item">
                             <div class="accordion-header">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseEight" aria-expanded="true" aria-controls="panelsStayOpen-collapseEight">
@@ -319,7 +328,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="ns-aprovacoes col-lg-3 card accordion">
+                    <div class="ns-aprovacoes col-lg-3 card accordion card">
                         <div class="row accordion-item">
                             <div class="accordion-header">
                                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseNine" aria-expanded="true" aria-controls="panelsStayOpen-collapseNine">
@@ -492,7 +501,7 @@
                 </div>
             </div>
         </section>
-        
+
     </section>
 
 </body>
